@@ -1,0 +1,70 @@
+.button-primary{
+    background-color: var(--LightGreen500);
+    color: var(--ColorBackground);
+    font-weight: 600;
+    min-width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.button-primary__disable{
+    opacity: 56%;
+}
+
+.button-primary:hover{
+    background-color: var(--LightGreen400);
+}
+
+.button-primary:active{
+    background-color: var(--LightGreen700);
+}
+.button-primary{
+    background-color: var(--LightGreen500);
+    color: var(--ColorBackground);
+    font-weight: 600;
+    min-width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: var(--BorderRadius);
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.button-primary__disable{
+    opacity: 56%;
+}
+
+.button-primary:hover{
+    background-color: var(--LightGreen400);
+}
+
+.button-primary:active{
+    background-color: var(--LightGreen700);
+}
+
+.button-second{
+    background-color: var(--ColorBackgroundWhite);
+    color: var(--ColorTitle);
+    font-weight: 600;
+    min-width: 80px;
+    height: 36px;
+    border: 1px solid var(--ColorBorder);
+    border-radius: var(--BorderRadius);
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.button-second__disable{
+    opacity: 56%;
+}
+
+.button-second:hover{
+    background-color: var(--ColorBackground);
+}
+
+.button-second:active{
+    background-color: var(--ColorPrimaryTextWhite);
+}
