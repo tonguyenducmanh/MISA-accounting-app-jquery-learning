@@ -7,15 +7,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách component nhỏ</title>
     <link rel="stylesheet" href="./css/main.css">
+
 </head>
 
 <body>
     Đây là danh sách các component base
 
+    <br><!-- datepicker--><br>
+
+    7. date picker <br> <br>
+    <div class="datepicker">
+        <div class="datepicker__label">Date picker label</div>
+        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY"></p>
+    </div>
+
+    date picker alert
+    <div class="datepicker">
+        <div class="datepicker__label">Date picker label</div>
+        <input type="date" class="datepicker__input datepicker__input--alert" placeholder="DD/MM/YYYY"></p>
+    </div>
+ 
+
+    <br><!-- combobox --> <br>
+
+    6. contextmenu <br><br>
+ 
+    contextmenu not open
+
+    <div class="contextmenu">
+        <div class="contextmenu__main">
+            <div class="contextmenu__button">
+                Sửa
+            </div>
+            <div class="contextmenu__dropicon">
+                <div class="contextmenu__menu">
+                    <div class="contextmenu__item">Nhân bản</div>
+                    <div class="contextmenu__item">Xóa</div>
+                    <div class="contextmenu__item">Ngưng sử dụng</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    contextmenu Opening
+
+    <div class="contextmenu">
+        <div class="contextmenu__main">
+            <div class="contextmenu__button">
+                Sửa
+            </div>
+            <div class="contextmenu__dropicon contextmenu__dropicon--clicked">
+                <div class="contextmenu__menu">
+                    <div class="contextmenu__item">Nhân bản</div>
+                    <div class="contextmenu__item">Xóa</div>
+                    <div class="contextmenu__item">Ngưng sử dụng</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
     <br><!-- combobox --> <br>
 
     5. combobox <br><br>
+    <div class="combobox">
+        <div class="combobox__label">
+            combobox Opening
+        </div>
+        <div class="combobox__warp combobox__warp--focus">
+            <input type="text" class="combobox__input" placeholder="Placeholder">
+            <div class="combobox__button combobox__button--open">
+                <div class="combobox__icon"></div>
+            </div>
+        </div>
+        <div class="combobox__options combobox__options--show">
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+            <div class="combobox__item">
+                Hà Nội
+            </div>
+        </div>
+        </div>
+    </div>
 
+
+    <br><br><br><br><br><br><br><br><br><br>
 
     <br><!-- dropdownlist --> <br>
     4. dropdown <br><br>
@@ -161,6 +259,7 @@
     <span class="icon"></span>
 
 
+    <script src="./js/jquery-3.6.1.min.js"></script>
 </body>
 
 </html>

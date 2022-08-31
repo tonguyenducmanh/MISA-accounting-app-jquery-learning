@@ -1,7 +1,7 @@
 .icon{
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 .icon::before{
     cursor: pointer;
@@ -11,7 +11,7 @@
     top: 0;
     left: 0;
     background-image: url(../../assets/img/Sprites.64af8f61.svg);
-    background-position: -424px -32px;
-    scale: 83%;
+    backgrouncd-position: -424px -32px;
+    scale: 100%;
     content: "";
 }
