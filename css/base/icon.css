@@ -8,10 +8,9 @@
     position: absolute;
     width: 24px;
     height: 24px;
-    top: 0;
-    left: 0;
     background-image: url(../../assets/img/Sprites.64af8f61.svg);
-    backgrouncd-position: -424px -32px;
+    background-position:-425px -33px;
     scale: 100%;
     content: "";
 }
+

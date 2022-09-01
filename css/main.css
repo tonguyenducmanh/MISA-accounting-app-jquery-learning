@@ -1,14 +1,11 @@
 /* base css */
 @import url(../css/base/icon.css);
 @import url(../css/base/button.css);
-@import url(../css/base/combobox.css);
 @import url(../css/base/contextmenu.css);
 @import url(../css/base/datepicker.css);
-@import url(../css/base/dropdown.css);
 @import url(../css/base/input.css);
 
 /* layout css */
-@import url(../css/layout/container.css);
 @import url(../css/layout/content.css);
 @import url(../css/layout/header.css);
 @import url(../css/layout/navbar.css);
@@ -50,8 +47,19 @@ body{
     font-family:  notosan-regular;
     font-size: 14px;
     width: 100%;
+    height: 100vh;
 }
 
+.container{
+    display: flex;
+    height: 100%;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 @font-face {
     font-family: notosan-regular;

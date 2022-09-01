@@ -1,0 +1,70 @@
+.header{
+    height: 56px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.header .header__left{
+    display: flex;
+    column-gap: 16px;
+}
+
+.header .header__left .header__menubtn::before{
+    background-position: -847px -32px;
+}
+
+.header .header__left .header__name{
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.header .header__left .header__dropicon::before{
+    background-position: -1128px -360px;
+}
+
+.header .header__right{
+    display: flex;
+    align-items: center;
+}
+
+.header .header__right .header_noti{
+    margin-right: 24px;
+}
+
+.header .header__right .header_noti::before{
+    background-position: -787px -30px;
+}
+
+.header .header__right .header__account{
+    display: flex;
+    align-items: center;
+}
+
+.header .header__right .header__account .header__avatar{
+    margin-right: 8px;
+}
+
+
+.header .header__right .header__account .header__avatar{
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background-image: url(../../assets/img/avartar.png);
+    filter: brightness(105%);
+    border-radius: 50%;
+}
+
+
+.header .header__right .header__name{
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.header .header__right .header__drop::before{
+    background-position: -464px -403px;
+}
