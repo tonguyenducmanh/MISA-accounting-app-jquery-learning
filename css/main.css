@@ -40,6 +40,10 @@
     --BorderRadius: 4px;
 }
 
+*:focus{
+    outline: 1px solid var(--LightGreen500);
+}
+
 /* reset css và thiết lập font mặc định */
 body{
     margin: 0;

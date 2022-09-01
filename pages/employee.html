@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <title>AMIS kế toán - Quản lý nhân viên</title>
+    <link rel="stylesheet" href="../lib/combobox/css/combobox.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     <div class="container">
         <div class="navbar">
             <div class="navbar__top">
-                <div class="icon navbar__button">
+                <div tabindex="0" class="icon navbar__button">
                 </div>
                 <div class="navbar__logo">
                 </div>
-                <div class="navbar__title">
+                <div tabindex="0" class="navbar__title">
                     Kế toán
                 </div>
             </div>
             <div class="navbar__list">
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__tq">
 
                     </div>
@@ -29,7 +30,7 @@
                         Tổng quan
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__tm">
 
                     </div>
@@ -37,7 +38,7 @@
                         Tiền mặt
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__tg">
 
                     </div>
@@ -45,7 +46,7 @@
                         Tiền gửi
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__mh">
 
                     </div>
@@ -53,7 +54,7 @@
                         Mua hàng
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__bh">
 
                     </div>
@@ -61,7 +62,7 @@
                         Bán hàng
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__qlhd">
 
                     </div>
@@ -69,7 +70,7 @@
                         Quản lý hóa đơn
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__k">
 
                     </div>
@@ -78,7 +79,7 @@
                     </div>
                 </div>
 
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__ccdc">
 
                     </div>
@@ -86,7 +87,7 @@
                         Công cụ dụng cụ
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__tscd">
 
                     </div>
@@ -94,7 +95,7 @@
                         Tài sản cố định
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__thue">
 
                     </div>
@@ -102,7 +103,7 @@
                         Thuế
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__gt">
 
                     </div>
@@ -110,7 +111,7 @@
                         Giá thành
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__th">
 
                     </div>
@@ -118,7 +119,7 @@
                         Tổng hợp
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__ns">
 
                     </div>
@@ -126,7 +127,7 @@
                         Ngân sách
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__bc">
 
                     </div>
@@ -134,7 +135,7 @@
                         Báo cáo
                     </div>
                 </div>
-                <div class="navbar__item">
+                <div tabindex="0" class="navbar__item">
                     <div class="icon navbar__pttc">
 
                     </div>
@@ -147,27 +148,34 @@
         <div class="main">
             <div class="header">
                 <div class="header__left">
-                    <div class="icon header__menubtn">
+                    <div tabindex="0" class="icon header__menubtn">
 
                     </div>
                     <div class="header__name">Công ty tnhh sản xuất - thương mại - dịch vụ qui phúc</div>
-                    <div class="icon header__dropicon"></div>
+                    <div tabindex="0" class="icon header__dropicon"></div>
                 </div>
                 <div class="header__right">
-                    <div class="icon header_noti"></div>
+                    <div tabindex="0" class="icon header_noti"></div>
                     <div class="header__account">
-                        <div class="header__avatar"></div>
+                        <div tabindex="0" class="header__avatar"></div>
                         <div class="header__name">Tô Nguyễn Đức Mạnh</div>
-                        <div class="icon header__drop"></div>
+                        <div tabindex="0" class="icon header__drop"></div>
                     </div>
                 </div>
             </div>
-            <div class="content">đây là content</div>
+            <div class="content">
+                <div class="content__top">
+                    <mcombobox id="cbxDepartment" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName" value="DepartmentId">
+                    </mcombobox>
+                </div>
+                <div class="content__table"></div>
+            </div>
         </div>
     </div>
 
     <!-- script thư viện -->
-    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script type="module" src="../lib/combobox/js/combobox.js"></script>
     <!-- script dùng chung -->
     <!-- script dùng riêng -->
 </body>
