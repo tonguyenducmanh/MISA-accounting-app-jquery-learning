@@ -14,7 +14,10 @@ var MISAEnum = {
         WARNING: "popup--warning",
         ASK : "popup--ask",
         SHOW: "popup__wrap--show",
-    }
+    },
+    form:{
+        SHOW: "form__wrap--show",
+    },
 }
 
 export default MISAEnum

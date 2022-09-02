@@ -1,0 +1,36 @@
+.form__wrap{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.226);
+    z-index: 3;
+}
+
+.form__wrap--show{
+    display: block;
+}
+
+.form__wrap .form{
+    position: relative;
+    width: 800px;
+    min-height: 550px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.form__wrap .form .form__heading{
+    display: flex;
+    justify-content: start;
+    column-gap: 16px;
+}
