@@ -34,19 +34,140 @@
     10. form <br> <br>
     <button class="button-second" id="btnForm">Hiện</button>
 
-    <div class="form__wrap form__wrap--show" id="form">
+    <div class="form__wrap" id="form">
         <div class="form">
             <div class="form__heading">
                 <div class="form__title">
                     Thông tin nhân viên
                 </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="checkbox__button" id="checkbox_kh">
+                    <label class="checkbox__label" for="checkbox_kh">Là khách hàng</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="checkbox__button" id="checkbox_ncc">
+                    <label class="checkbox__label" for="checkbox_ncc">Là nhà cung cấp</label>
+                </div>
             </div>
             <div class="form__body">
-
+                <!-- phần nhập form thứ nhất -->
+                <div class="form__part form__one">
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Mã <span class="input__label--alert">*</span>
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập mã nhân viên">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Tên <span class="input__label--alert">*</span>
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Đơn vị <span class="input__label--alert">*</span>
+                        </div>
+                        <mcombobox id="cbxDepartment" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
+                            value="DepartmentId" placeholder="Nhập đơn vị">
+                        </mcombobox>
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Chức danh
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập chức danh">
+                    </div>
+                </div>
+                <!-- phần nhập form thứ 2 -->
+                <div class="form__part form__two">
+                    <div class="datepicker">
+                        <div class="datepicker__label">Ngày sinh</div>
+                        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
+                    </div>
+                    <div class="radio">
+                        <div class="radio__title">Giới tính</div>
+                        <div class="radio__select">
+                            <input type="radio" name="gender" class="radio__button" id="radio__male">
+                            <label class="radio__label" for="radio__male">Nam</label>
+                            <input type="radio" name="gender" class="radio__button" id="radio__female">
+                            <label class="radio__label" for="radio__female">Nữ</label>
+                            <input type="radio" name="gender" class="radio__button" id="radio__other">
+                            <label class="radio__label" for="radio__other">Khác</label>
+                        </div>
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Số CMND
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập số CMND">
+                    </div>
+                    <div class="datepicker">
+                        <div class="datepicker__label">Ngày cấp</div>
+                        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Nơi cấp
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập nơi cấp">
+                    </div>
+                </div>
+                <!-- phần nhập form thứ 3 -->
+                <div class="form__part form__three">
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Địa chỉ
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập địa chỉ">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            ĐT di động
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập số điện thoại di động">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            ĐT cố định
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập số điện thoại cố định">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Email
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập Email">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Tài khoản ngân hàng
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập tài khoản ngân hàng">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Tên ngân hàng
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập tên ngân hàng">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Chi nhánh
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập chi nhánh">
+                    </div>
+                </div>
             </div>
             <div class="form__action">
-
+                <button class="button-second">Hủy</button>
+                <div class="form__action--right">
+                    <button class="button-second">Cất</button>
+                    <button class="button-primary">Cất và thêm</button>
+                </div>
             </div>
+            <div class="icon form__help"></div>
+            <div class="icon form__closebtn"></div>
         </div>
     </div>
 
@@ -55,9 +176,15 @@
     9. radio <br> <br>
 
     <div class="radio">
-        <input type="radio" class="radio__button" id="radio__btn1">
-        <label class="radio__label" for="radio__btn1">Label</label>
-    </div>
+        <div class="radio__title">Giới tính</div>
+        <div class="radio__select">
+            <input type="radio" name="gender" class="radio__button" id="radio__male">
+            <label class="radio__label" for="radio__male">Nam</label>
+            <input type="radio" name="gender" class="radio__button" id="radio__female">
+            <label class="radio__label" for="radio__female">Nữ</label>
+            <input type="radio" name="gender" class="radio__button" id="radio__other">
+            <label class="radio__label" for="radio__other">Khác</label>
+        </div>
     
     <br><!-- checkbox--><br>
 
@@ -155,7 +282,7 @@
     5. date picker <br> <br>
     <div class="datepicker">
         <div class="datepicker__label">Date picker label</div>
-        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY"></p>
+        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
     </div>
 
     date picker alert
@@ -252,7 +379,7 @@
 
     <button class="button-primary">Button</button>
 
-    <br><!-- button --> <br>
+    <br><!-- icon --> <br>
     0. icon &nbsp;
 
     <span class="icon"></span>

@@ -17,6 +17,7 @@
     border: 1px solid var(--ColorBorder);
     padding: 8px 12px;
     outline: none;
+    height: 36px;
 }
 
 .datepicker .datepicker__input:focus{

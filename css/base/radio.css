@@ -1,7 +1,20 @@
 .radio {
     display: flex;
     column-gap: 8px;
-    align-items: center;
+    flex-direction: column;
+    margin: 8px;
+}
+
+.radio .radio__title{
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.radio .radio__select{
+    display: flex;
+    column-gap: 16px;
+    justify-content: start;
+    width: fit-content;
 }
 
 .radio .radio__button {
@@ -10,8 +23,7 @@
 
 .radio .radio__button + .radio__label{
     position: relative;
-    width: 16px;
-    height: 16px;
+    width: 100%;
     padding-left: 24px;
     cursor: pointer;
 }
