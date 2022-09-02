@@ -1,0 +1,44 @@
+.datepicker{
+
+}
+
+.datepicker .datepicker__label{
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.datepicker .datepicker__input{
+    font-family: notosan-italic;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: var(--BorderRadius);
+    border: 1px solid var(--ColorBorder);
+    padding: 8px 12px;
+    outline: none;
+}
+
+.datepicker .datepicker__input:focus{
+    border: 1px solid var(--LightGreen500);
+}
+
+
+.datepicker .datepicker__input--alert{
+    border: 1px solid var(--ColorAlert);
+}
+
+.datepicker .datepicker__input--alert:focus{
+    border: 1px solid var(--ColorAlert);
+}
+
+
+/* chỉ áp dụng css dưới với trình duyệt chrome */
+
+input[type=date]::-webkit-datetime-edit {
+    color: var(--ColorDisable);
+}
+/* 
+.datepicker .datepicker__input::placeholder{
+    color: var(--BorderRadius);
+} */

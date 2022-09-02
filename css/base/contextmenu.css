@@ -1,0 +1,67 @@
+.contextmenu{
+    position: relative;
+    width: 70px;
+}
+
+.contextmenu .contextmenu__main{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.contextmenu .contextmenu__button{
+    color: blue;
+}
+
+.contextmenu .contextmenu__dropicon{
+    position: relative;
+    width: 28px;
+    height: 16px;
+    margin: 8px;
+}
+.contextmenu .contextmenu__dropicon::before{
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    margin-left: 5px;
+    background-image: url(../../assets/img/Sprites.64af8f61.svg);
+    background-position: -368px -360px;
+    filter: invert(8%) sepia(100%) saturate(7220%) hue-rotate(246deg) brightness(96%) contrast(145%);
+    content: "";
+}
+
+.contextmenu .contextmenu__dropicon--clicked{
+    border: 1px solid blue;
+}
+
+.contextmenu .contextmenu__menu{
+    display: none;
+    min-width: 130px;
+    position: absolute;
+    right: -10px;
+    top:22px;
+    background-color: var(--ColorBackgroundWhite);
+    border: 1px solid var(--ColorBorder);
+    border-radius: var(--BorderRadius);
+}
+
+.contextmenu .contextmenu__dropicon--clicked .contextmenu__menu{
+    display: block;
+}
+
+.contextmenu .contextmenu__item{
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.contextmenu .contextmenu__item:hover{
+    background-color: var(--ColorBorder);
+    color: var(--LightGreen600)
+}
+
+.contextmenu .contextmenu__item:active{
+    background-color: var(--ColorPrimaryTextWhite);
+}

@@ -1,0 +1,126 @@
+.navbar{
+    background-color: #393A3E;
+    width: 200px;
+    overflow-x: auto;
+}
+
+.navbar .navbar__top{
+    display: flex;
+    height: 56px;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 24px;
+}
+
+.navbar .navbar__button{
+    margin-right: 16px;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.navbar .navbar__button::before{
+    background-position:-1157px -27px;
+    filter: brightness(0%) invert(100%);
+}
+
+.navbar .navbar__logo{
+    cursor: pointer;
+    background-image: url(../../assets/img/Logo_Module_TiengViet_White.66947422.svg);
+    background-size: cover;
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+}
+
+.navbar .navbar__title{
+    cursor: pointer;
+    color: var(--ColorBackgroundWhite);
+    text-transform: uppercase;
+    font-family: notosan-bold;
+}
+
+.navbar .navbar__list{
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.navbar .navbar__item{
+    cursor: pointer;
+    color: var(--ColorBackgroundWhite);
+    height: 44px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.navbar .navbar__item:hover{
+    background-color: var(--LightGreen600);
+}
+
+.navbar .navbar__item:active{
+    background-color: var(--LightGreen700);
+}
+
+.navbar .navbar__tq::before{
+    background-position: -30px -1628px;
+}
+
+.navbar .navbar__tm::before{
+    background-position: -73px -1628px;
+}
+
+.navbar .navbar__tg::before{
+    background-position: -117px -1628px;
+}
+
+.navbar .navbar__mh::before{
+    background-position: -161px -1628px;
+}
+
+.navbar .navbar__bh::before{
+    background-position: -204px -1628px;
+}
+
+.navbar .navbar__qlhd::before{
+    background-position: -249px -1628px;
+}
+
+.navbar .navbar__k::before{
+    background-position: -290px -1628px;
+}
+
+.navbar .navbar__ccdc::before{
+    background-position: -336px -1628px;
+}
+
+.navbar .navbar__tscd::before{
+    background-position: -378px -1628px;
+}
+
+.navbar .navbar__thue::before{
+    background-position: -423px -1628px;
+}
+
+.navbar .navbar__gt::before{
+    background-position: -467px -1628px;
+}
+
+.navbar .navbar__th::before{
+    background-position: -510px -1628px;
+}
+
+.navbar .navbar__ns::before{
+    background-position: -377px -1660px;
+}
+
+.navbar .navbar__bc::before{
+    background-position: -547px -1628px;
+}
+
+.navbar .navbar__pttc::before{
+    background-position: -203px -1662px;
+}
