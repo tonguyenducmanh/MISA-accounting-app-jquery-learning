@@ -1,4 +1,56 @@
 .content{
-    background-color: cadetblue;
+    background-color: var(--ColorPrimaryTextWhite);
     flex:1;
+    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .content__top{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+}
+
+.content .content__top .content__label{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.content .content__bottom{
+    box-sizing: border-box;
+    background-color: var(--ColorBackgroundWhite);
+    flex: 1;
+    padding: 16px;
+}
+
+.content .content__bottom .content__menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.content .content__bottom .content__menu .content__menuleft{
+    opacity: 0;
+}
+
+.content .content__bottom .content__menu .content__menuleft--show{
+    opacity: 100%;
+}
+
+.content .content__bottom .content__menu .content__menuright{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.content .content__bottom .content__menu .content__menuright .content__search{
+    width: 300px;
+}
+
+.content .content__bottom .content__menu .content__menuright .content__reloadbtn::before{
+    background-position: -1096px -88px;
 }

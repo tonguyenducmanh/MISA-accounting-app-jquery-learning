@@ -1,0 +1,89 @@
+.popup__wrap{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.226);
+    z-index: 3;
+}
+
+.popup__wrap--show{
+    display: block;
+}
+
+.popup__wrap .popup{
+    position: relative;
+    width: 450px;
+    min-height: 190px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 24px;
+}
+
+.popup__wrap .popup .popup__content{
+    border-bottom: 1px solid var(--ColorBorder);
+    padding: 30px 0;
+    margin-bottom: 24px;
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+}
+
+.popup__wrap .popup .popup__icon{
+    width: 39px;
+    height: 39px;
+}
+
+.popup__wrap .popup .popup__icon::before{
+    top:0px;
+    left: 0;
+    width: 39px;
+    height: 39px;
+}
+
+
+.popup__wrap .popup--alert .popup__icon::before{
+    background-position: -750px -462px;
+}
+
+
+.popup__wrap .popup--warning .popup__icon::before{
+    background-position: -597px -462px;
+}
+
+.popup__wrap .popup--askwarning .popup__icon::before{
+    background-position: -597px -462px;
+}
+
+
+.popup__wrap .popup--ask .popup__icon::before{
+    background-position: -829px -462px;
+}
+
+.popup__wrap .popup--alert .popup__action{
+    display: flex;
+    justify-content: center;
+}
+
+.popup__wrap .popup--warning .popup__action{
+    display: flex;
+    justify-content: end;
+}
+
+.popup__wrap .popup--ask .popup__action{
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup__wrap .popup--askwarning .popup__action{
+    display: flex;
+    justify-content: space-between;
+}

@@ -4,6 +4,13 @@
 @import url(../css/base/contextmenu.css);
 @import url(../css/base/datepicker.css);
 @import url(../css/base/input.css);
+@import url(../css/base/dialog.css);
+@import url(../css/base/popup.css);
+@import url(../css/base/table.css);
+
+/* lib css */
+
+@import url(../lib/combobox/css/combobox.css);
 
 /* layout css */
 @import url(../css/layout/content.css);

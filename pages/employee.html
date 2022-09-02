@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <title>AMIS kế toán - Quản lý nhân viên</title>
-    <link rel="stylesheet" href="../lib/combobox/css/combobox.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -165,10 +164,24 @@
             </div>
             <div class="content">
                 <div class="content__top">
-                    <mcombobox id="cbxDepartment" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName" value="DepartmentId">
-                    </mcombobox>
+                    <div class="content__label">Nhân viên</div>
+                    <button class="button-primary content__addbtn">Thêm mới nhân viên</button>
                 </div>
-                <div class="content__table"></div>
+                <div class="content__bottom">
+                    <div class="content__menu">
+                        <div class="content__menuleft"> Đã chọn x nhân viên</div>
+                        <div class="content__menuright">
+                            <div class="input__warp content__search">
+                                <input type="text" class="input__field  input__field--italic" placeholder="Tìm theo mã, tên nhân viên">
+                                <span class="icon input__icon"></span>
+                            </div>
+                            <div class="icon content__reloadbtn"></div>
+                        </div>
+                    </div>
+                    <div class="content__table">
+                        Đây là table
+                    </div>
+                </div>
             </div>
         </div>
     </div>
