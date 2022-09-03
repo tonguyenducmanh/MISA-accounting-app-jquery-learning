@@ -6,6 +6,7 @@
     align-items: center;
     padding: 0 16px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .header .header__left{
@@ -32,11 +33,11 @@
     align-items: center;
 }
 
-.header .header__right .header_noti{
+.header .header__right .header__noti{
     margin-right: 24px;
 }
 
-.header .header__right .header_noti::before{
+.header .header__right .header__noti::before{
     background-position: -787px -30px;
 }
 

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách component nhỏ</title>
+    <link rel="stylesheet" href="./lib/combobox/css/combobox.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>Trang web này sẽ hiển thị toàn bộ các element cơ bản của trang nhân viên</h1>
+
+    <br> <!-- spinner--> <br>
+
+    13. spinner <br> <br>
+    <div class="spinner">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32" height="32" viewBox="0 0 32 32"><title>32px_dots 06</title><g class="nc-loop_dots-06-32" transform="rotate(45 16 16)"><circle fill="#2ca01c" cx="16" cy="3" r="3"/><circle fill="#2ca01c" cx="25.19239" cy="6.80761" r="3" opacity="0.4"/><circle fill="#2ca01c" cx="29" cy="16" r="3" opacity="0.4"/><circle fill="#2ca01c" cx="25.19239" cy="25.19239" r="3" opacity="0.4"/><circle fill="#2ca01c" cx="16" cy="29" r="3" opacity="0.4"/><circle fill="#2ca01c" cx="6.80761" cy="25.19239" r="3" opacity="0.4"/><circle fill="#2ca01c" cx="3" cy="16" r="3" opacity="0.6"/><circle fill="#2ca01c" cx="6.80761" cy="6.80761" r="3" opacity="0.8"/></g><script>!function(){function t(t){this.element=t,this.animationId,this.start=null,this.init()}if(!window.requestAnimationFrame){var i=null;window.requestAnimationFrame=function(t,n){var e=(new Date).getTime();i||(i=e);var a=Math.max(0,16-(e-i)),o=window.setTimeout(function(){t(e+a)},a);return i=e+a,o}}t.prototype.init=function(){var t=this;this.animationId=window.requestAnimationFrame(t.triggerAnimation.bind(t))},t.prototype.reset=function(){var t=this;window.cancelAnimationFrame(t.animationId)},t.prototype.triggerAnimation=function(t){var i=this;this.start||(this.start=t);var n=t-this.start;800&gt;n||(this.start=this.start+800),this.element.setAttribute("transform","rotate("+parseInt(Math.min(n/100,8))%8*45+" 16 16)");if(document.documentElement.contains(this.element))window.requestAnimationFrame(i.triggerAnimation.bind(i))};var n=document.getElementsByClassName("nc-loop_dots-06-32"),e=[];if(n)for(var a=0;n.length&gt;a;a++)!function(i){e.push(new t(n[i]))}(a);document.addEventListener("visibilitychange",function(){"hidden"==document.visibilityState?e.forEach(function(t){t.reset()}):e.forEach(function(t){t.init()})})}();</script></svg>
+    </div>
+
+    
+    <br><!-- page navigation--><br>
+    12. page navigation <br><br>
+
+    <div class="page__navi">
+        <div class="page__total">
+            <span>Tổng số: </span>
+            <span class="page__records">1000</span>
+            <span>bản ghi</span>
+        </div>
+        <div class="page__categories">
+            <mcombobox id="page_ranges" placeholder="20 bản ghi trên 1 trang" defaultValue="10 bản ghi trên 1 trang"
+                data="10 bản ghi trên 1 trang: 10;20 bản ghi trên 1 trang: 20;30 bản ghi trên 1 trang: 30;50 bản ghi trên 1 trang: 50"
+            >
+            </mcombobox>
+            <div class="page__number">
+                <div class="page__prev page__number--disable">Trước</div>
+                <div class="page__count page__count--selected">1</div>
+                <div class="page__count">2</div>
+                <div class="page__count">3</div>
+                <div class="page__count">...</div>
+                <div class="page__count">52</div>
+                <div class="page__next">Sau</div>
+            </div>
+        </div>
+    </div>
+
+    <br><!-- table--><br>
+
+    11. table <br> <br>
+    <div class="table__wrap">
+        <table class="table">
+            <thead>
+             <tr>
+                 <th class="table__th table__thcheck">    
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_all">
+                         <label class="checkbox__label" for="checkbox_all"></label>
+                     </div>
+                 </th>
+                 <th class="text__align--left" style="width: 150px">Mã nhân viên</th>
+                 <th class="text__align--left" style="width: 200px">Tên nhân viên</th>
+                 <th class="text__align--left" style="width: 110px">Giới tính</th>
+                 <th class="text__align--center" style="width: 130px">Ngày sinh</th>
+                 <th class="text__align--left" style="width: 200px">Số CMND</th>
+                 <th class="text__align--left" style="width: 200px">Chức danh</th>
+                 <th class="text__align--left" style="width: 250px">Tên đơn vị</th>
+                 <th class="text__align--left" style="width: 200px">Số tài khoản</th>
+                 <th class="text__align--left" style="width: 250px">Tên ngân hàng</th>
+                 <th class="text__align--left" style="width: 250px">Chi nhánh TK ngân hàng</th>
+                 <th class="text__align--center" style="width: 100px">Chức năng</th>
+             </tr>
+            </thead> 
+            <tbody>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+            </tbody>
+         </table>
+    </div>
+
+
+    <br><!-- form--><br>
+
+    10. form <br> <br>
+    <button class="button-second" id="btnForm">Hiện</button>
+
+    <div class="form__wrap" id="form">
+        <div class="form">
+            <div class="form__heading">
+                <div class="form__title">
+                    Thông tin nhân viên
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="checkbox__button" id="checkbox_kh">
+                    <label class="checkbox__label" for="checkbox_kh">Là khách hàng</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="checkbox__button" id="checkbox_ncc">
+                    <label class="checkbox__label" for="checkbox_ncc">Là nhà cung cấp</label>
+                </div>
+            </div>
+            <div class="form__body">
+                <!-- phần nhập form thứ nhất -->
+                <div class="form__part form__one">
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Mã <span class="input__label--alert">*</span>
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập mã nhân viên">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Tên <span class="input__label--alert">*</span>
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Đơn vị <span class="input__label--alert">*</span>
+                        </div>
+                        <mcombobox id="cbxDepartment" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
+                            value="DepartmentId" placeholder="Nhập đơn vị">
+                        </mcombobox>
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Chức danh
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập chức danh">
+                    </div>
+                </div>
+                <!-- phần nhập form thứ 2 -->
+                <div class="form__part form__two">
+                    <div class="datepicker">
+                        <div class="datepicker__label">Ngày sinh</div>
+                        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
+                    </div>
+                    <div class="radio">
+                        <div class="radio__title">Giới tính</div>
+                        <div class="radio__select">
+                            <input type="radio" name="gender" class="radio__button" id="radio__male">
+                            <label class="radio__label" for="radio__male">Nam</label>
+                            <input type="radio" name="gender" class="radio__button" id="radio__female">
+                            <label class="radio__label" for="radio__female">Nữ</label>
+                            <input type="radio" name="gender" class="radio__button" id="radio__other">
+                            <label class="radio__label" for="radio__other">Khác</label>
+                        </div>
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Số CMND
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập số CMND">
+                    </div>
+                    <div class="datepicker">
+                        <div class="datepicker__label">Ngày cấp</div>
+                        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Nơi cấp
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập nơi cấp">
+                    </div>
+                </div>
+                <!-- phần nhập form thứ 3 -->
+                <div class="form__part form__three">
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Địa chỉ
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập địa chỉ">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            ĐT di động
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập số điện thoại di động">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            ĐT cố định
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập số điện thoại cố định">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Email
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập Email">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Tài khoản ngân hàng
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập tài khoản ngân hàng">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Tên ngân hàng
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập tên ngân hàng">
+                    </div>
+                    <div class="input form__ele">
+                        <div class="input__label">
+                            Chi nhánh
+                        </div>
+                        <input type="text" class="input__field" placeholder="Nhập chi nhánh">
+                    </div>
+                </div>
+            </div>
+            <div class="form__action">
+                <button class="button-second">Hủy</button>
+                <div class="form__action--right">
+                    <button class="button-second">Cất</button>
+                    <button class="button-primary">Cất và thêm</button>
+                </div>
+            </div>
+            <div class="icon form__help"></div>
+            <div class="icon form__closebtn"></div>
+        </div>
+    </div>
+
+    <br><!-- radio--><br>
+
+    9. radio <br> <br>
+
+    <div class="radio">
+        <div class="radio__title">Giới tính</div>
+        <div class="radio__select">
+            <input type="radio" name="gender" class="radio__button" id="radio__male">
+            <label class="radio__label" for="radio__male">Nam</label>
+            <input type="radio" name="gender" class="radio__button" id="radio__female">
+            <label class="radio__label" for="radio__female">Nữ</label>
+            <input type="radio" name="gender" class="radio__button" id="radio__other">
+            <label class="radio__label" for="radio__other">Khác</label>
+        </div>
+    </div>
+    <br><!-- checkbox--><br>
+
+    8. checkbox <br> <br>
+    <div class="checkbox">
+        <input type="checkbox" class="checkbox__button" id="checkbox_btn1">
+        <label class="checkbox__label" for="checkbox_btn1">Label</label>
+    </div>
+
+
+    <br><!-- popup--><br>
+
+    7. popup <br> <br>
+
+    <br><!-- popup ask warning--><br>
+
+    <button class="button-second" id="btnAskWarning">Hiện ask warning</button>
+
+    <div class="popup__wrap" id="popupAskWarning">
+        <div class="popup popup--askwarning">
+            <div class="popup__content">
+                <div class="icon popup__icon"></div>
+                <div class="popup__text">Bạn có thực sự muốn xóa nhân viên này khum?</div>
+            </div>
+            <div class="popup__action">
+                <button class="button-second">Không</button>
+                <button class="button-primary">Có</button>
+            </div>
+        </div>
+    </div>
+
+
+    <br><!-- popup ask--><br>
+    <button class="button-second" id="btnAsk">Hiện ask</button>
+
+    <div class="popup__wrap" id="popupAsk">
+        <div class="popup popup--ask">
+            <div class="popup__content">
+                <div class="icon popup__icon"></div>
+                <div class="popup__text">Dữ liệu đã được thay đổi, bạn có muốn cất khum</div>
+            </div>
+            <div class="popup__action">
+                <button class="button-second">Hủy</button>
+                <div class="">
+                    <button class="button-second">Không</button>
+                    <button class="button-primary">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br><!-- popup warning--><br>
+    <button class="button-second" id="btnWarning">Mã nhân viên đã tồn tại, vui lòng kiểm tra lại</button>
+
+    <div class="popup__wrap" id="popupWarning">
+        <div class="popup popup--warning">
+            <div class="popup__content">
+                <div class="icon popup__icon"></div>
+                <div class="popup__text">Tên không được để trống</div>
+            </div>
+            <div class="popup__action">
+                <button class="button-primary">Đồng ý</button>
+            </div>
+        </div>
+    </div>
+
+
+    <br><!-- popup alert--><br>
+    <button class="button-second" id="btnAlert">Hiện alert</button>
+
+    <div class="popup__wrap" id="popupAlert">
+        <div class="popup popup--alert">
+            <div class="popup__content">
+                <div class="icon popup__icon"></div>
+                <div class="popup__text">Tên không được để trống</div>
+            </div>
+            <div class="popup__action">
+                <button class="button-primary">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+
+    <br><!-- combobox--><br>
+
+    6. combobox <br> <br>
+    <mcombobox id="cbxDepartment" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
+        value="DepartmentId" placeholder="placeholder text">
+    </mcombobox>
+
+
+    <br><!-- datepicker--><br>
+
+    5. date picker <br> <br>
+    <div class="datepicker">
+        <div class="datepicker__label">Date picker label</div>
+        <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
+    </div>
+
+    date picker alert
+    <div class="datepicker">
+        <div class="datepicker__label">Date picker label</div>
+        <input type="date" class="datepicker__input datepicker__input--alert" placeholder="DD/MM/YYYY"></p>
+    </div>
+
+
+    <br><!-- combobox --> <br>
+
+    4. contextmenu <br><br>
+
+    contextmenu not open
+
+    <div class="contextmenu">
+        <div class="contextmenu__main">
+            <div class="contextmenu__button">
+                Sửa
+            </div>
+            <div class="contextmenu__dropicon">
+                <div class="contextmenu__menu">
+                    <div class="contextmenu__item">Nhân bản</div>
+                    <div class="contextmenu__item">Xóa</div>
+                    <div class="contextmenu__item">Ngưng sử dụng</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    contextmenu Opening
+
+    <div class="contextmenu">
+        <div class="contextmenu__main">
+            <div class="contextmenu__button">
+                Sửa
+            </div>
+            <div class="contextmenu__dropicon contextmenu__dropicon--clicked">
+                <div class="contextmenu__menu">
+                    <div class="contextmenu__item">Nhân bản</div>
+                    <div class="contextmenu__item">Xóa</div>
+                    <div class="contextmenu__item">Ngưng sử dụng</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
+
+    <br><!-- input --> <br>
+    3. input <br><br>
+
+    <div class="input">
+        <div class="input__label">
+            Field label
+        </div>
+        <input type="text" class="input__field" placeholder="Placeholder">
+    </div>
+
+    <div class="input">
+        <div class="input__label">
+            Field label alert <span class="input__label--alert">*</span>
+        </div>
+        <input type="text" class="input__field input__field--alert" placeholder="Placeholder">
+    </div>
+
+    <div class="input">
+        <div class="input__label">
+            Field label icon
+        </div>
+        <div class="input__warp">
+            <input type="text" class="input__field" placeholder="Placeholder">
+            <span class="icon input__icon"></span>
+        </div>
+    </div>
+
+    <div class="input">
+        <div class="input__label">
+            Field label italic
+        </div>
+        <div class="input__warp">
+            <input type="text" class="input__field input__field--italic" placeholder="Placeholder">
+            <span class="icon input__icon"></span>
+        </div>
+    </div>
+
+    <br><!-- button --> <br>
+    2. button second <br><br>
+
+    <button class="button-second">Button</button>
+
+    <br><!-- button --> <br>
+    1. button primary <br><br>
+
+    <button class="button-primary">Button</button>
+
+    <br><!-- icon --> <br>
+    0. icon &nbsp;
+
+    <span class="icon"></span>
+
+    <!-- script thư viện jquery -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <!-- script thư viện combobox -->
+    <script type="module" src="./lib/combobox/js/combobox.js"></script>
+    <!-- script test các element -->
+    <script type="module" src="./testElement.js"></script>
+</body>
+
+</html>

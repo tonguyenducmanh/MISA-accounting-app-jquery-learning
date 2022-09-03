@@ -1,0 +1,46 @@
+.checkbox {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+
+.checkbox .checkbox__button {
+    display: none;
+}
+
+.checkbox .checkbox__button + .checkbox__label{
+    position: relative;
+    width: 100%;
+    height: 16px;
+    padding-left: 24px;
+    cursor: pointer;
+}
+
+.checkbox .checkbox__button + .checkbox__label::before{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 2px;
+    border: 1px solid var(--ColorBorder);
+    left: 0px;
+    bottom:0px;
+    background-color: var(--ColorBackgroundWhite);
+}
+
+.checkbox .checkbox__button:checked + .checkbox__label::before{
+    background-color: var(--LightGreen500);
+    border: 1px solid var(--LightGreen500);
+}
+
+.checkbox .checkbox__button:checked + .checkbox__label::after{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    content: "";
+    left: 0px;
+    bottom: 0px;
+    background-image:url(../../assets/img/Sprites.64af8f61.svg);
+    background-position: -1271px -360px;
+    filter: brightness(0%) invert(100%);
+}

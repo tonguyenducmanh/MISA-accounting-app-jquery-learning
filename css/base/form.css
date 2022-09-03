@@ -1,0 +1,180 @@
+.form__wrap{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.226);
+    z-index: 3;
+}
+
+.form__wrap--show{
+    display: block;
+}
+
+.form__wrap .form{
+    position: relative;
+    width: 950px;
+    min-height: 550px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.form__wrap .form .form__heading{
+    display: flex;
+    justify-content: start;
+    column-gap: 16px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.form__wrap .form__heading .form__title{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.form__wrap .form .form__body{
+    flex: 1;
+    display:grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    row-gap: 32px;
+}
+
+.form__wrap .form .form__body .form__part{
+    width: 100%;
+    height: 100%;
+}
+
+/* phân chia grid cho phần nhập form thứ 1 */
+.form__wrap .form .form__body .form__one{
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-areas: 
+        "one two"
+        "three three"
+        "four four";
+    column-gap: 8px;
+}
+/* vị trí của phần nhập form thứ 1 ứng với từng element */
+.form__wrap .form .form__body .form__one .form__ele:first-child{
+    grid-area: one;
+}
+.form__wrap .form .form__body .form__one .form__ele:nth-child(2){
+    grid-area: two;
+}
+.form__wrap .form .form__body .form__one .form__ele:nth-child(3){
+    grid-area: three;
+}
+.form__wrap .form .form__body .form__one .form__ele:nth-child(4){
+    grid-area: four;
+}
+
+/* phân chia grid cho phần nhập form thứ 2 */
+.form__wrap .form .form__body .form__two{
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-areas: 
+        "one two"
+        "three four"
+        "five five";
+    column-gap: 8px;
+}
+/* vị trí của phần nhập form thứ 2 ứng với từng element */
+.form__wrap .form .form__body .form__two .form__ele:first-child{
+    grid-area: one;
+}
+.form__wrap .form .form__body .form__two .form__ele:nth-child(2){
+    grid-area: two;
+}
+.form__wrap .form .form__body .form__two .form__ele:nth-child(3){
+    grid-area: three;
+}
+.form__wrap .form .form__body .form__two .form__ele:nth-child(4){
+    grid-area: four;
+}
+.form__wrap .form .form__body .form__two .form__ele:nth-child(5){
+    grid-area: five;
+}
+
+
+/* phân chia grid cho phần nhập form thứ 3 */
+.form__wrap .form .form__body .form__three{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    column-gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "full full full full"
+    "one two three zero"
+    "four five six zero";
+}
+/* vị trí của phần nhập form thứ 3 ứng với từng element */
+.form__wrap .form .form__body .form__three .form__ele:first-child{
+    grid-area: full;
+}
+.form__wrap .form .form__body .form__three .form__ele:nth-child(2){
+    grid-area: one;
+}
+.form__wrap .form .form__body .form__three .form__ele:nth-child(3){
+    grid-area: two;
+}
+.form__wrap .form .form__body .form__three .form__ele:nth-child(4){
+    grid-area: three;
+}
+.form__wrap .form .form__body .form__three .form__ele:nth-child(5){
+    grid-area: four;
+}
+.form__wrap .form .form__body .form__three .form__ele:nth-child(6){
+    grid-area: five;
+}
+.form__wrap .form .form__body .form__three .form__ele:nth-child(7){
+    grid-area: six;
+}
+
+.form .form__action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    border-top: 1px solid var(--ColorBorder);
+    padding-top: 32px;
+}
+
+.form .form__action .form__action--right{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.form .form__help{
+    position: absolute;
+    top: 12px;
+    right: 48px;
+}
+
+.form .form__help::before{
+    background-position: -88px -144px;
+}
+
+.form .form__closebtn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.form .form__closebtn::before{
+    background-position: -145px -144px;
+}

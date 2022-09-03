@@ -21,6 +21,7 @@
     border: 1px solid var(--ColorBorder);
     font-size: 14px;
     outline: none;
+    height: 36px;
 }
 
 .input__field::placeholder{

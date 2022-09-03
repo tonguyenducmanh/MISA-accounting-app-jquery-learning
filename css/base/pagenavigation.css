@@ -1,0 +1,46 @@
+.page__navi{
+    box-sizing: border-box;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.page__navi .page__total{
+    display: flex;
+    column-gap: 8px;
+}
+
+.page__navi .page__total .page__records{
+    font-weight: 600;
+}
+
+.page__navi .page__categories{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.page__navi .page__number{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.page__navi .page__number .page__number--disable{
+    color: var(--ColorSecondaryText);
+    cursor: default;
+    pointer-events: none;
+}
+
+.page__navi .page__number .page__count{
+    cursor: pointer;
+}
+
+.page__navi .page__number .page__count--selected{
+    border: 1px solid var(--ColorBorder);
+    padding: 0 8px;
+}

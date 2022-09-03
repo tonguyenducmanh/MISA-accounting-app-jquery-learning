@@ -1,0 +1,176 @@
+.table__wrap{
+    position: relative;
+    flex: 1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.table__wrap .table{
+    flex: 1;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    position: absolute;
+    width: max-content;
+}
+
+
+.table__wrap .table thead{
+    top:0;
+    z-index: 2;
+    background-color: var(--ColorThead);
+    position: sticky;
+}
+
+.table__wrap .table thead tr {
+    height: 40px;
+}
+
+
+.table__wrap .table thead tr th{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+.table__wrap .table thead tr th:not(:first-child, :last-child){
+    position: relative;
+}
+
+.table__wrap .table thead tr th::before{
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right:0;
+    top:0;
+    border-bottom: 1px solid  var(--ColorBorder);
+    content: "";
+}
+
+.table__wrap .table thead tr th:not(:last-child)::before{
+    border-right: 1px solid  var(--ColorBorder);
+}
+
+.table__wrap .table thead tr th:first-child{
+    position: sticky;
+    background-color: var(--ColorThead);
+    left: 0;
+    z-index: 3;
+}
+
+.table__wrap .table tbody{
+    background-color: var(--ColorBackgroundWhite);
+}
+
+.table__wrap .table tbody tr {
+    height: 48px;
+    cursor: pointer;
+    border-top: 1px solid var(--ColorBorder);
+    border-bottom: 1px solid var(--ColorBorder);
+}
+
+.table__wrap .table tbody tr:first-child{
+    border-top: none;
+}
+
+.table__wrap .table tbody tr td:first-child{
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+
+.table__wrap .table tbody tr:hover{
+    background-color: var(--ColorTableHover);
+}
+.table__wrap .table tbody tr:hover td:first-child{
+    background-color: var(--ColorTableHover);
+}
+
+.table__wrap .table tbody tr:has(input:checked){
+    background-color: var(--LightGreen100);
+}
+
+.table__wrap .table tbody tr:has(input:checked) td:first-child{
+    background-color: var(--LightGreen100);
+}
+
+.table__wrap .table tbody tr td:not(:first-child){
+    border-right: 0.5px dotted var(--ColorBorder);
+}
+
+
+.table__wrap .table tbody tr td:first-child::before{
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-right: 1px dotted var(--ColorBorder);
+}
+
+.table__wrap .table .checkbox__button + .checkbox__label{
+    padding-left: 0px;
+}
+
+.table__wrap .table .table__thcheck{
+    width: 48px;
+    height: 16px;
+    background-color: var(--ColorBackgroundWhite);
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.table__wrap .table tr td:first-child{
+    width: 48px;
+    height: 16px;
+    background-color: var(--ColorBackgroundWhite);
+}
+.table__wrap .table .checkbox{
+    margin-left: 16px;
+}
+
+.table__wrap .table tr th:not(:first-child, :last-child){
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0px 16px;
+}
+
+.table__wrap .table tr td:not(:first-child, :last-child){
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0px 16px;
+}
+
+.table__wrap .table .text__align--center{
+    text-align: center;
+}
+
+.table__wrap .table .text__align--right{
+    text-align: right;
+}
+
+.table__wrap .table .text__align--center:has(.contextmenu){
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    padding-left: 16px;
+}
+
+.table__wrap .table__wrap--loading{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+}
+
+.table__wrap .table__wrap--hide{
+    display: none;
+}

@@ -38,6 +38,8 @@
 }
 
 .contextmenu .contextmenu__menu{
+    z-index: 1;
+    background-color: var(--ColorBackgroundWhite);
     display: none;
     min-width: 130px;
     position: absolute;
