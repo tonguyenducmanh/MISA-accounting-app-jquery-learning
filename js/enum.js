@@ -18,6 +18,14 @@ var MISAEnum = {
     form:{
         SHOW: "form__wrap--show",
     },
+    contextMenu:{
+        SHOW: "contextmenu__dropicon--clicked",
+    },
+    pageNavigation:{
+        DISABLE: "page__number--disable",
+        SELECTED: "page__count--selected"
+    },
+
 }
 
 export default MISAEnum

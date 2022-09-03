@@ -9,24 +9,499 @@
     <link rel="stylesheet" href="./lib/combobox/css/combobox.css">
     <link rel="stylesheet" href="./css/main.css">
     <style>
-        body {
-            padding: 0px 80px;
-            box-sizing: border-box;
-        }
     </style>
 </head>
 
 <body>
     <h1>Trang web này sẽ hiển thị toàn bộ các element cơ bản của trang nhân viên</h1>
 
+    <br><!-- page navigation--><br>
+    12. page navigation <br><br>
 
+    <div class="page__navi">
+        <div class="page__total">
+            <span>Tổng số: </span>
+            <span class="page__records">1000</span>
+            <span>bản ghi</span>
+        </div>
+        <div class="page__categories">
+            <mcombobox id="page_ranges" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
+                value="DepartmentId" placeholder="20 bản ghi trên 1 trang" default="20 bản ghi trên 1 trang">
+            </mcombobox>
+            <div class="page__number">
+                <div class="page__prev page__number--disable">Trước</div>
+                <div class="page__count page__count--selected">1</div>
+                <div class="page__count">2</div>
+                <div class="page__count">3</div>
+                <div class="page__count">...</div>
+                <div class="page__count">52</div>
+                <div class="page__next">Sau</div>
+            </div>
+        </div>
+    </div>
 
     <br><!-- table--><br>
 
     11. table <br> <br>
-    <button class="button-second">Hiện</button>
-
-    <div class="table"></div>
+    <div class="table__wrap">
+        <table class="table">
+            <thead>
+             <tr>
+                 <th class="table__th table__thcheck">    
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_all">
+                         <label class="checkbox__label" for="checkbox_all"></label>
+                     </div>
+                 </th>
+                 <th class="text__align--left" style="width: 150px">Mã nhân viên</th>
+                 <th class="text__align--left" style="width: 200px">Tên nhân viên</th>
+                 <th class="text__align--left" style="width: 110px">Giới tính</th>
+                 <th class="text__align--center" style="width: 130px">Ngày sinh</th>
+                 <th class="text__align--left" style="width: 200px">Số CMND</th>
+                 <th class="text__align--left" style="width: 200px">Chức danh</th>
+                 <th class="text__align--left" style="width: 250px">Tên đơn vị</th>
+                 <th class="text__align--left" style="width: 200px">Số tài khoản</th>
+                 <th class="text__align--left" style="width: 250px">Tên ngân hàng</th>
+                 <th class="text__align--left" style="width: 250px">Chi nhánh TK ngân hàng</th>
+                 <th class="text__align--center" style="width: 100px">Chức năng</th>
+             </tr>
+            </thead> 
+            <tbody>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <div class="checkbox">
+                         <input type="checkbox" class="checkbox__button" id="checkbox_1">
+                         <label class="checkbox__label" for="checkbox_1"></label>
+                     </div>
+                 </td>
+                 <td>
+                     NV001
+                 </td>
+                 <td>Tô Nguyễn Đức Mạnh</td>
+                 <td>Nam</td>
+                 <td class="text__align--center">14/03/2000</td>
+                 <td>034200007684</td>
+                 <td>Giám đốc</td>
+                 <td>Vận hành tại Hà Nội</td>
+                 <td>01239120313</td>
+                 <td>BIDV</td>
+                 <td>Chi nhánh Cầu Giấy</td>
+                 <td class="text__align--center">    
+                     <div class="contextmenu">
+                         <div class="contextmenu__main">
+                             <div class="contextmenu__button">
+                                 Sửa
+                             </div>
+                             <div class="contextmenu__dropicon">
+                                 <div class="contextmenu__menu">
+                                     <div class="contextmenu__item">Nhân bản</div>
+                                     <div class="contextmenu__item">Xóa</div>
+                                     <div class="contextmenu__item">Ngưng sử dụng</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </td>
+             </tr>
+            </tbody>
+         </table>
+    </div>
 
 
     <br><!-- form--><br>
@@ -185,7 +660,7 @@
             <input type="radio" name="gender" class="radio__button" id="radio__other">
             <label class="radio__label" for="radio__other">Khác</label>
         </div>
-    
+    </div>
     <br><!-- checkbox--><br>
 
     8. checkbox <br> <br>
@@ -273,7 +748,7 @@
 
     6. combobox <br> <br>
     <mcombobox id="cbxDepartment" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
-        value="DepartmentId">
+        value="DepartmentId" placeholder="placeholder text">
     </mcombobox>
 
 

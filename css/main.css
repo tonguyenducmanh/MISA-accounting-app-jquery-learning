@@ -1,3 +1,7 @@
+/* lib css */
+@import url(../lib/combobox/css/combobox.css);
+
+
 /* base css */
 @import url(../css/base/icon.css);
 @import url(../css/base/button.css);
@@ -9,10 +13,7 @@
 @import url(../css/base/radio.css);
 @import url(../css/base/form.css);
 @import url(../css/base/table.css);
-
-/* lib css */
-
-@import url(../lib/combobox/css/combobox.css);
+@import url(../css/base/pagenavigation.css);
 
 /* layout css */
 @import url(../css/layout/content.css);
@@ -43,6 +44,8 @@
   --ColorBackground: #f7f7f7;
   --ColorBackgroundWhite: #ffffff;
   --ColorPrimaryTextWhite: #dbdee3;
+  --ColorThead: #EDEEF2;
+  --ColorTableHover: #F8F8F8;
   --ColorSecondTextWhite: #7b8798;
   --ColorAlert: #eb3333;
   --BorderRadius: 4px;
@@ -62,6 +65,11 @@ body {
   font-size: 14px;
   width: 100%;
   height: 100vh;
+}
+
+body {
+  padding: 0px 80px;
+  box-sizing: border-box;
 }
 
 .container {
