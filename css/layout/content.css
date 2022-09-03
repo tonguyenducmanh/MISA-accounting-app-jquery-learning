@@ -24,6 +24,12 @@
     background-color: var(--ColorBackgroundWhite);
     flex: 1;
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    row-gap: 16px;
 }
 
 .content .content__bottom .content__menu{
@@ -51,6 +57,21 @@
     width: 300px;
 }
 
+.content .content__bottom .content__menu .content__menuright .content__search .content__searchicon::before{
+    margin-top: -5px;
+}
+
 .content .content__bottom .content__menu .content__menuright .content__reloadbtn::before{
     background-position: -1096px -88px;
+}
+
+.content .content__bottom .page__navi .combobox .combobox__drop::before{
+    background-image: url(../../assets/img/Sprites.64af8f61.svg);
+    background-position: -560px -360px;
+    transform: rotate(180deg);
+}
+
+.content .content__bottom .page__navi .combobox .combobox__data{
+    top: unset;
+    bottom: 100%;
 }
