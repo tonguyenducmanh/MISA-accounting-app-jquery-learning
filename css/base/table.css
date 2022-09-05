@@ -204,6 +204,11 @@
     text-align: right;
 }
 
+.table__wrap .table .text__align--left{
+    text-align: left;
+    padding-left: 16px;
+}
+
 .table__wrap .table .text__align--center:has(.contextmenu){
     display: flex;
     box-sizing: border-box;
