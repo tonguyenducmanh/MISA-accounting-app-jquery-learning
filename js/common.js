@@ -2,7 +2,7 @@ var common = {
     /**
      * format ngày tháng về định dạng Việt Nam
      * @param {any} date Ngày tháng
-     * Athor: Tô Nguyễn Đức Mạnh (03/09/2022)
+     * Author: Tô Nguyễn Đức Mạnh (03/09/2022)
      */
     formatDate(date) {
         try {
@@ -27,7 +27,7 @@ var common = {
     /**
      * format tiền về định dạng VNĐ
      * @param {Number} money Tiền
-     * Athor: Tô Nguyễn Đức Mạnh (03/09/2022)
+     * Author: Tô Nguyễn Đức Mạnh (03/09/2022)
      */
     formatMoneyVND(money) {
         try {
@@ -36,6 +36,25 @@ var common = {
         } catch (error) {
             console.log(error);
             return "";
+        }
+    },
+    /**
+     * format gender trả về định dạng giới tính chuẩn
+     * @param {int} gender Giới tính
+     * Author: Tô Nguyễn Đức Mạnh (05/09/2022)
+     */
+    formatGender(gender){
+        try {
+            switch (gender) {
+                case 0:
+                    return "Nam";
+                case 1:
+                    return "Nữ";
+                default:
+                    return "Khác";
+            }
+        } catch (error) {
+            console.log(error)
         }
     }
 }

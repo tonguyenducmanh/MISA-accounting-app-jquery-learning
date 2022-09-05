@@ -60,6 +60,7 @@ import tdCheckbox from "./tdCheckbox.js"
                         // format văn bản
                         const formatDate = ths[th].hasAttribute("format-date");
                         const formatMoney = ths[th].hasAttribute("format-money");
+                        const formatGender = ths[th].hasAttribute("format-gender");
                         if (formatDate){
                             value = common.formatDate(value);
                             td = `<td  class="text__align--center">${value|| ''}</td>`
@@ -68,6 +69,10 @@ import tdCheckbox from "./tdCheckbox.js"
                         if (formatMoney){
                             value = common.formatMoneyVND(value);
                             td = `<td  class="text__align--right">${value|| ''}</td>`
+                        }
+                        if (formatGender){
+                            value = common.formatGender(value)
+                            td = `<td  class="text__align--left">${value|| ''}</td>`
                         }
                         else{
                             // tạo cột td
