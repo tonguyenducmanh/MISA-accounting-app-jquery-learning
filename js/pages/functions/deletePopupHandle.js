@@ -7,7 +7,7 @@ import MISAEnum from "../../enum.js"
 
 var deletePopupHandle= {
     /**
-     * tính năng xóa người dùng theo id
+     * tính năng xóa người dùng theo id.
      * Author: Tô Nguyễn Đức Mạnh (05/09/2022)
      */
     delete(e){
@@ -34,13 +34,13 @@ var deletePopupHandle= {
         }
     },
     /**
-     * hủy xóa người dùng xóa các value có sẵn trong popup đi, như value Id và nội dung
+     * hủy xóa người dùng xóa các value có sẵn trong popup đi, như value Id và nội dung.
      * Author: Tô Nguyễn Đức Mạnh (05/09/2022)
      */
     cancel(e){
         try {
             // xóa các thông tin như value ID đi
-            $(e.target).parents(".popup__action").children(".button-primary").attr("value", "")
+            $("#popupAskWarning .popup__action").children(".button-primary").attr("value", "")
             $("#popupAskWarning .popup__text").text(``)
             //  đóng popup này đi
             let popupDelete = $("#popupAskWarning")

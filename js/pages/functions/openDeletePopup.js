@@ -1,10 +1,10 @@
-/**
- * Thêm tính năng xóa bản ghi khi bấm vào nút sửa
- * Author: Tô Nguyễn Đức Mạnh (05/09/2022)
- */
 
 import MISAEnum from "../../enum.js"
 
+/**
+ * Thêm tính năng xóa bản ghi khi bấm vào nút sửa.
+ * Author: Tô Nguyễn Đức Mạnh (05/09/2022)
+ */
 function openDeletePopup(e){
     try {
         // lấy ra id của records
