@@ -11,23 +11,35 @@ import deletePopupHandle from "./functions/deletePopupHandle.js";
 $(document).ready(function(){
     // fetch dữ liệu từ API trả vào table
     loadData()
+    
     // thêm chức năng tải lại dữ liệu cho nút load lại
+    // click vào nút search thì tiến hành search, click vào 
+    // chọn số lượng page trên 1 trang cũng thế (3 nút có vai trò như nhau)
     $(document).on("click", ".main .content .content__reloadbtn", loadData);
+    $(document).on("click", ".main .content .content__searchicon" , loadData )
+    $(document).on("click", ".combobox__data .combobox__item", loadData)
+    
+    
     // thêm chức năng toggle menu edit tại mỗi records
     $(document).on("click", ".main .contextmenu__button", editToggle)
     $(document).on("click", ".main .contextmenu__dropicon", editToggle)
+    
     // click vào thêm mới thì hiện dialog thêm mới nhân viên
     $(document).on("click", "#content__addbtn", showForm)
+
     // click vào nút hủy hoặc dấu x thì sẽ đóng form thêm mới nhân viên
     $(document).on("click", ".form .form__cancel", hideForm)
 
     // click vào nút xóa thì truyền id xóa vào trong popup xóa
     $(document).on("click", ".table .contextmenu .contextmenu__deletebtn", openDeletePopup)
+    
     // handle popup xóa
     // click vào đồng ý trong pop up thì sẽ xóa records đi và load lại bảng
     $(document).on("click", "#popupAskWarning .button-primary", deletePopupHandle.delete)
+    
     // click vào cancel trong pop up thì sẽ hủy xóa đi và clear info
     $(document).on("click", "#popupAskWarning .button-second", deletePopupHandle.cancel)
+    
     // 1 loạt các sự kiện click ra bên ngoài thì ẩn form, menu,...
     $(document).mouseup(clickOutToggle);
     $(document).mouseup(clickOutForm);

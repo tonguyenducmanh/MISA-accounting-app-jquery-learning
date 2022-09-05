@@ -171,17 +171,17 @@
             <div class="content">
                 <div class="content__top">
                     <div class="content__label">Nhân viên</div>
-                    <button class="button-primary content__addbtn" id="content__addbtn">Thêm mới nhân viên</button>
+                    <button tabindex="0" class="button-primary content__addbtn" id="content__addbtn">Thêm mới nhân viên</button>
                 </div>
                 <div class="content__bottom">
                     <div class="content__menu">
                         <div class="content__menuleft"> Đã chọn x nhân viên</div>
                         <div class="content__menuright">
                             <div class="input__warp content__search">
-                                <input type="text" class="input__field  input__field--italic" placeholder="Tìm theo mã, tên nhân viên">
-                                <span class="icon input__icon content__searchicon"></span>
+                                <input tabindex="0" type="text" class="input__field  input__field--italic" placeholder="Tìm theo mã, tên nhân viên">
+                                <span tabindex="0" class="icon input__icon content__searchicon"></span>
                             </div>
-                            <div class="icon content__reloadbtn"></div>
+                            <div tabindex="0" class="icon content__reloadbtn"></div>
                         </div>
                     </div>
                     <div class="table__wrap">
@@ -194,7 +194,7 @@
                                     <th class="table__th table__thcheck">    
                                         <div class="checkbox">
                                             <input type="checkbox" class="checkbox__button" id="checkbox_all">
-                                            <label class="checkbox__label" for="checkbox_all"></label>
+                                            <label tabindex="0" class="checkbox__label" for="checkbox_all"></label>
                                         </div>
                                     </th>
                                     <th class="text__align--left" propName="EmployeeCode" style="width: 150px">Mã nhân viên</th>
@@ -258,17 +258,18 @@
                         </div>
                         <div class="page__categories">
                             <mcombobox id="page_ranges" placeholder="20 bản ghi trên 1 trang" defaultValue="10 bản ghi trên 1 trang"
+                                unique="10"
                                 data="10 bản ghi trên 1 trang: 10;20 bản ghi trên 1 trang: 20;30 bản ghi trên 1 trang: 30;50 bản ghi trên 1 trang: 50"
                                 >
                             </mcombobox>
                             <div class="page__number">
-                                <div class="page__prev page__number--disable">Trước</div>
-                                <div class="page__count page__count--selected">1</div>
-                                <div class="page__count">2</div>
-                                <div class="page__count">3</div>
+                                <div tabindex="0" class="page__prev page__number--disable">Trước</div>
+                                <div tabindex="0" class="page__count page__count--selected">1</div>
+                                <div tabindex="0" class="page__count">2</div>
+                                <div tabindex="0" class="page__count">3</div>
                                 <div class="page__count">...</div>
-                                <div class="page__count">52</div>
-                                <div class="page__next">Sau</div>
+                                <div tabindex="0" class="page__count">52</div>
+                                <div tabindex="0" class="page__next">Sau</div>
                             </div>
                         </div>
                     </div>
