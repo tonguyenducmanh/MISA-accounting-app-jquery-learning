@@ -9,7 +9,7 @@ function tdCheckbox(id) {
             <td>
                 <div class="checkbox">
                     <input type="checkbox" class="checkbox__button" id="checkbox__${id}">
-                    <label class="checkbox__label" for="checkbox__${id}"></label>
+                    <label tabindex="0" class="checkbox__label" for="checkbox__${id}"></label>
                 </div>
             </td>
             `;

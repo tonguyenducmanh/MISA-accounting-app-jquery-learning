@@ -31,22 +31,6 @@ var MISAEnum = {
     },
     table:{
         HIDE: "table__wrap--hide",
-        tdEdit:`<td class="text__align--center">    
-        <div class="contextmenu">
-            <div class="contextmenu__main">
-                <div class="contextmenu__button">
-                    Sửa
-                </div>
-                <div class="contextmenu__dropicon">
-                    <div class="contextmenu__menu">
-                        <div class="contextmenu__item">Nhân bản</div>
-                        <div class="contextmenu__item">Xóa</div>
-                        <div class="contextmenu__item">Ngưng sử dụng</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </td>`,
     },
 
 }
