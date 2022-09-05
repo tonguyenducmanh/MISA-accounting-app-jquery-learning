@@ -1,7 +1,7 @@
 import MISAEnum from "../../enum.js";
 
 /**
- * chức năng ẩn form thêm mới nhân viên
+ * chức năng ẩn form thêm mới nhân viên.
  * Author: Tô Nguyễn Đức Mạnh (03/09/2022)
  */
 function hideForm() {
@@ -14,7 +14,7 @@ function hideForm() {
 
 /**
  * ấn ra ngoài form thì ẩn toàn bộ form
- * tránh trường hợp hiện khi không dùng
+ * tránh trường hợp hiện khi không dùng.
  * Author: Tô Nguyễn Đức Mạnh (03/09/2022)
  */
 

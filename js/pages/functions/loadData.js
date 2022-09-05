@@ -1,10 +1,10 @@
 import MISAEnum from "../../enum.js"
 import tdCheckbox from "./tdCheckbox.js"
-/**
- * Thực hiện load data từ API mỗi khi tải lại trang
- * AUthor: Tô Nguyễn Đức Mạnh (05/09/2022)
- */
 
+/**
+ * Thực hiện load data từ API mỗi khi tải lại trang.
+ * Author: Tô Nguyễn Đức Mạnh (05/09/2022)
+ */
  function loadData(){
     try {
         // xử lý địa chỉ api xem có từ khóa tìm kiếm không
@@ -78,15 +78,15 @@ import tdCheckbox from "./tdCheckbox.js"
                     // tạo td chức năng
                     let tdEdit = `<td class="text__align--center">    
                                     <div class="contextmenu">
-                                        <div tabindex="0" class="contextmenu__main">
+                                        <div class="contextmenu__main">
                                             <div class="contextmenu__button">
                                                 Sửa
                                             </div>
-                                            <div class="contextmenu__dropicon">
+                                            <div tabindex="0" class="contextmenu__dropicon">
                                                 <div class="contextmenu__menu">
-                                                    <div class="contextmenu__item">Nhân bản</div>
-                                                    <div class="contextmenu__item  contextmenu__deletebtn" valueId='${emp["EmployeeId"]}' valueName='${emp["FullName"]}'>Xóa</div>
-                                                    <div class="contextmenu__item">Ngưng sử dụng</div>
+                                                    <div tabindex="0" class="contextmenu__item">Nhân bản</div>
+                                                    <div tabindex="0" class="contextmenu__item  contextmenu__deletebtn" valueId='${emp["EmployeeId"]}' valueName='${emp["FullName"]}'>Xóa</div>
+                                                    <div tabindex="0" class="contextmenu__item">Ngưng sử dụng</div>
                                                 </div>
                                             </div>
                                         </div>
