@@ -41,7 +41,9 @@
   --ColorPrimaryText: #212121;
   --ColorSecondaryText: #666666;
   --ColorDisable: #9e9e9e;
+  --ColorAlt: #505050;
   --ColorBorder: #e0e0e0;
+  --ColorHover: #58595D;
   --ColorBackground: #f7f7f7;
   --ColorBackgroundWhite: #ffffff;
   --ColorPrimaryTextWhite: #dbdee3;
@@ -143,3 +145,23 @@ body {
   /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
 }
+
+/* 
+  Thêm css cho phần title của mỗi element
+*/
+
+*[data-title]:hover::after{
+  content: attr(data-title);
+  background-color: var(--ColorAlt);
+  color: var(--ColorBackgroundWhite);
+  width: max-content;
+  text-transform: none;
+  position: absolute;
+  padding: 4px 10px;
+  top: calc(100% + 15px);
+  right: 5px;
+  z-index: 3;
+  font-weight: 500;
+  font-size: 14px;
+}
+

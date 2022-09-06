@@ -152,11 +152,20 @@
     border-top: 1px solid var(--ColorBorder);
     padding-top: 32px;
 }
+.form .form__action .form__cancel{
+    position: relative;
+}
 
 .form .form__action .form__action--right{
     display: flex;
     align-items: center;
     column-gap: 8px;
+}
+.form .form__action .form__action--right .button-second{
+    position: relative;
+}
+.form .form__action .form__action--right .button-primary{
+    position: relative;
 }
 
 .form .form__help{

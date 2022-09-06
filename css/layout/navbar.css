@@ -38,6 +38,7 @@
     color: var(--ColorBackgroundWhite);
     text-transform: uppercase;
     font-family: notosan-bold;
+    position: relative;
 }
 
 .navbar .navbar__list{
@@ -55,10 +56,11 @@
     column-gap: 12px;
     padding-left: 12px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .navbar .navbar__item:hover{
-    background-color: var(--LightGreen600);
+    background-color: var(--ColorHover);
 }
 
 .navbar .navbar__item:active{

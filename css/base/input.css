@@ -32,6 +32,14 @@
     border: 1px solid var(--LightGreen500);
 }
 
+.input__field:hover{
+    border: 2px solid var(--ColorBorder);
+}
+
+.input__field:hover:focus{
+    border: 1px solid var(--LightGreen500);
+}
+
 .input__field--alert{
     border: 1px solid var(--ColorAlert);
 }
