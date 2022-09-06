@@ -58,7 +58,7 @@
 }
 
 .navbar .navbar__item:hover{
-    background-color: var(--LightGreen600);
+    background-color: var(--ColorHover);
 }
 
 .navbar .navbar__item:active{
