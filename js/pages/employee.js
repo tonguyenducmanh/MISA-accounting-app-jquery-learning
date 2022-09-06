@@ -3,6 +3,8 @@ import loadData from "./functions/loadData.js"
 import openDeletePopup from "./functions/openDeletePopup.js";
 import deletePopupHandle from "./functions/deletePopupHandle.js";
 import handleKeyDown from "./functions/handleKeyDown.js";
+import handleForm from "./functions/handleForm.js";
+import handleMultipleKey from "./functions/handleMultipleKeyDown.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -23,9 +25,6 @@ $(document).ready(function(){
     $(document).on("click", ".main .contextmenu__button", editToggle)
     $(document).on("click", ".main .contextmenu__dropicon", editToggle)
 
-    // click vào thêm mới thì hiện dialog thêm mới nhân viên
-    // $(document).on("click", "#content__addbtn", handleForm.showForm)
-
     // click vào nút xóa thì truyền id xóa vào trong popup xóa
     $(document).on("click", ".table .contextmenu .contextmenu__deletebtn", openDeletePopup)
     
@@ -38,6 +37,8 @@ $(document).ready(function(){
     // khi ấn enter lúc đang tabindex ở nút sửa hoặc icon sửa thì mở context menu
     $(document).on("keydown", ".main .contextmenu__button" , {event_type: "showcontextmenu"}, handleKeyDown)
     $(document).on("keydown", ".main .contextmenu__dropicon" , {event_type: "showcontextmenu"}, handleKeyDown)
+    // click ra ngoài thì ẩn contextmenu
+    $(document).mouseup(clickOutToggle);
     
     // enter lúc tabindex vào nút xóa thì truyền id xóa vào trong popup xóa
     $(document).on("keydown", ".table .contextmenu .contextmenu__deletebtn",{event_type: "opendeletepopup"}, handleKeyDown)
@@ -51,12 +52,30 @@ $(document).ready(function(){
     $( "#popupAskWarning .popup--askwarning" ).draggable();
     
     
+    
+    // click vào thêm mới thì hiện form thêm mới nhân viên
+    $(document).on("click", "#content__addbtn", handleForm.showForm)
+    // ấn shift + A để hiện form thêm mới nhanh
+    $(document).on("keydown", handleMultipleKey.shiftA)
     // handle form
-    // click vào nút hủy hoặc dấu x thì sẽ hiện cảnh báo muốn đóng form không
     $( "#form .form" ).draggable();
+    // click vào nút hủy hoặc dấu x thì sẽ hiện cảnh báo muốn đóng form không
+    $(document).on("click", "#form .form__cancel", handleForm.cancelForm)
+    // khi ấn esc thì cũng hiện popup như click vào hủy
+    $(document).on("keydown",{event_type: "cancelForm"}, handleKeyDown)
+
     
     // handle popup ask
     $( "#popupAsk .popup--ask" ).draggable();
+    // ấn vào nút hủy thì ẩn popup nhập form tiếp
+    $(document).on("click", "#popupAsk .button--cancel", handleForm.cancelForm)
+    // ấn vào nút không thì ẩn form và popup
+    $(document).on("click", "#popupAsk .button--no", handleForm.exitForm)
+    // ấn esc thì như ấn hủy (đã viết ở cancelForm bên trên)
+    // ấn ctrl + Q sẽ hủy hoàn toàn và thoát khỏi form 
+    $(document).on("keydown", handleMultipleKey.ctrlQ)
+
+
 
     
     // esc keydown function
@@ -64,10 +83,7 @@ $(document).ready(function(){
     $(document).on("keydown",{event_type: "hidecontext"}, handleKeyDown)
     $(document).on("keydown",{event_type: "hidepopupdelete"}, handleKeyDown)
 
-    // 1 loạt các sự kiện click ra bên ngoài thì ẩn form, menu,...
-    $(document).mouseup(clickOutToggle);
-    // $(document).mouseup(handleForm.clickOutForm);
-    $( "#popupAsk" ).mouseup(clickOutToggle);
+
 
 
     //1 loạt các sự kiện di chuyển form, popup theo chuột khi grab nó
