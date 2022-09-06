@@ -8,6 +8,14 @@ var MISAEnum = {
         ENTER: 13,
         ESC:27,
     },
+    // các tên phím keyboard
+    keyname:{
+        control: "ctrlKey",
+        q: "KeyQ",
+        s: "KeyS",
+        a: "KeyA",
+        shift: "shiftKey",
+    },
     // các từ khóa liên quan tới popup
     popup:{
         ALERT: "popup--alert",

@@ -171,7 +171,7 @@
             <div class="content">
                 <div class="content__top">
                     <div class="content__label">Nhân viên</div>
-                    <button tabindex="0" class="button-primary content__addbtn" id="content__addbtn">Thêm mới nhân viên</button>
+                    <button tabindex="0" class="button-primary content__addbtn" id="content__addbtn" data-title="Nhấn Shift + A để thêm nhanh">Thêm mới nhân viên</button>
                 </div>
                 <div class="content__bottom">
                     <div class="content__menu">
@@ -270,7 +270,7 @@
                                 <div class="input__label">
                                     Tên <span class="input__label--alert">*</span>
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập họ và tên">
+                                <input type="text" class="input__field input__focus" placeholder="Nhập họ và tên">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
@@ -296,7 +296,7 @@
                             <div class="radio">
                                 <div class="radio__title">Giới tính</div>
                                 <div class="radio__select">
-                                    <input type="radio" name="gender" class="radio__button" id="radio__male">
+                                    <input type="radio" name="gender" class="radio__button" id="radio__male" checked>
                                     <label class="radio__label" for="radio__male">Nam</label>
                                     <input type="radio" name="gender" class="radio__button" id="radio__female">
                                     <label class="radio__label" for="radio__female">Nữ</label>
@@ -394,6 +394,22 @@
             </div>
             <!-- phần popup hỏi muốn lưu không -->
             
+            <div class="popup__wrap" id="popupAsk">
+                <div class="popup popup--ask">
+                    <div class="popup__content">
+                        <div class="icon popup__icon"></div>
+                        <div class="popup__text">Dữ liệu đã được thay đổi, bạn có muốn cất khum</div>
+                    </div>
+                    <div class="popup__action">
+                        <button class="button-second button--cancel" data-title="Hủy (ESC)">Hủy</button>
+                        <div class="">
+                            <button class="button-second button--no" data-title="Không (ctrl + Q)">Không</button>
+                            <button class="button-primary">Có</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- phần popup trùng id -->
 
             <!-- phần popup nhập lỗi -->
@@ -402,6 +418,7 @@
 
     <!-- script thư viện -->
     <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
     <script type="module" src="../lib/combobox/js/combobox.js"></script>
     <!-- script dùng chung -->
     <script src="../js/common.js"></script>

@@ -1,7 +1,7 @@
 import MISAEnum from "../../enum.js"
 import deletePopupHandle from "./deletePopupHandle.js";
 import editToggle, { clickOutToggle } from "./editToggle.js";
-import hideForm, { clickOutForm } from "./hideForm.js";
+import handleForm from "./handleForm.js";
 import loadData from "./loadData.js"
 import openDeletePopup from "./openDeletePopup.js";
 
@@ -44,10 +44,6 @@ function handleKeyDown(e){
         if(e.keyCode === MISAEnum.keycode.ESC){
             let type = e.data.event_type
             switch (type) {
-                // ẩn form thêm mới
-                case "hideform":
-                    hideForm();
-                    break;
                 // ẩn contextmenu
                 case "hidecontext":
                     clickOutToggle(e);
@@ -55,6 +51,10 @@ function handleKeyDown(e){
                 // ẩn popupdelete
                 case "hidepopupdelete":
                     deletePopupHandle.cancel(e);
+                    break;
+                // hiện popup hỏi muốn hủy nhập form không
+                case "cancelForm":
+                    handleForm.cancelForm();
                     break;
                 default:
                     break;

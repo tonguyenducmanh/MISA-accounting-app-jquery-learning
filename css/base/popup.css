@@ -6,7 +6,7 @@
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.226);
-    z-index: 3;
+    z-index: 5;
 }
 
 .popup__wrap--show{
@@ -26,6 +26,11 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 24px;
+    cursor: grab;
+}
+
+.popup__wrap .popup:active{
+    cursor: grabbing;
 }
 
 .popup__wrap .popup .popup__content{
