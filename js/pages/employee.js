@@ -3,7 +3,6 @@ import loadData from "./functions/loadData.js"
 import openDeletePopup from "./functions/openDeletePopup.js";
 import deletePopupHandle from "./functions/deletePopupHandle.js";
 import handleKeyDown from "./functions/handleKeyDown.js";
-import handleForm from "./functions/handleForm.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -23,7 +22,7 @@ $(document).ready(function(){
     // thêm chức năng toggle menu edit tại mỗi records
     $(document).on("click", ".main .contextmenu__button", editToggle)
     $(document).on("click", ".main .contextmenu__dropicon", editToggle)
-    
+
     // click vào thêm mới thì hiện dialog thêm mới nhân viên
     // $(document).on("click", "#content__addbtn", handleForm.showForm)
 
@@ -67,7 +66,7 @@ $(document).ready(function(){
 
     // 1 loạt các sự kiện click ra bên ngoài thì ẩn form, menu,...
     $(document).mouseup(clickOutToggle);
-    $(document).mouseup(handleForm.clickOutForm);
+    // $(document).mouseup(handleForm.clickOutForm);
     $( "#popupAsk" ).mouseup(clickOutToggle);
 
 
