@@ -30,7 +30,11 @@ import tdCheckbox from "./tdCheckbox.js"
         if(arrFilter.length != 0){
             apiFetch = `${MISAEnum.API.GETEMPLOYEEFILTER}?${arrFilter.join("&")}`
         }
-
+        // Xóa dữ liệu cũ trong table
+        let table = $("#table__employee .table__body--real")
+        table.empty()
+        // hiện loading lên khi đợi fetch data
+        $(".table__wrap--loading").removeClass(MISAEnum.table.HIDE)
         // Gọi API từ server để lấy dữ liệu
         fetch(apiFetch, {method: "GET"})
             .then(res => {
@@ -39,12 +43,6 @@ import tdCheckbox from "./tdCheckbox.js"
                }
             })
             .then(res => {
-                // Xóa dữ liệu cũ trong table
-                let table = $("#table__employee .table__body--real")
-                table.empty()
-                // hiện loading lên khi đợi fetch data
-                let loading = $(".table__wrap--loading")
-                $(loading).removeClass(MISAEnum.table.HIDE)
                 // Lấy thông tin các cột dữ liệu của bảng
                 let ths = $("#table__employee thead th")
                 // Xử lý dữ liệu
@@ -114,7 +112,7 @@ import tdCheckbox from "./tdCheckbox.js"
                     $(".page__navi .page__records").text("0")
                 }
                 // ẩn loading đi
-                $(loading).addClass(MISAEnum.table.HIDE)
+                $(".table__wrap--loading").addClass(MISAEnum.table.HIDE)
             })
             .catch(res =>{
                 console.log(res)
