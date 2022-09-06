@@ -64,4 +64,8 @@ $(document).ready(function(){
     // 1 loạt các sự kiện click ra bên ngoài thì ẩn form, menu,...
     $(document).mouseup(clickOutToggle);
     $(document).mouseup(clickOutForm);
+
+    //1 loạt các sự kiện di chuyển form, popup theo chuột khi grab nó
+    $( "#form .form" ).draggable();
+    $( "#popupAskWarning .popup--askwarning" ).draggable();
 })

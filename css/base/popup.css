@@ -26,6 +26,11 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 24px;
+    cursor: grab;
+}
+
+.popup__wrap .popup:active{
+    cursor: grabbing;
 }
 
 .popup__wrap .popup .popup__content{
