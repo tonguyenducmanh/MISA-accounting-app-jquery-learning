@@ -264,19 +264,19 @@
                                 <div class="input__label">
                                     Mã <span class="input__label--alert">*</span>
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập mã nhân viên">
+                                <input type="text" class="input__field form__employeecode" propName="EmployeeCode" placeholder="Nhập mã nhân viên">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Tên <span class="input__label--alert">*</span>
                                 </div>
-                                <input type="text" class="input__field input__focus" placeholder="Nhập họ và tên">
+                                <input type="text" class="input__field input__focus form__employeename" propName="FullName" placeholder="Nhập họ và tên">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Đơn vị <span class="input__label--alert">*</span>
                                 </div>
-                                <mcombobox id="cbxDepartment" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
+                                <mcombobox id="cbxDepartment" propName="DepartmentName" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
                                     value="DepartmentId" placeholder="Nhập đơn vị">
                                 </mcombobox>
                             </div>
@@ -284,23 +284,23 @@
                                 <div class="input__label">
                                     Chức danh
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập chức danh">
+                                <input type="text" class="input__field form__positionname" propName="PositionName" placeholder="Nhập chức danh">
                             </div>
                         </div>
                         <!-- phần nhập form thứ 2 -->
                         <div class="form__part form__two">
                             <div class="datepicker">
                                 <div class="datepicker__label">Ngày sinh</div>
-                                <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
+                                <input type="date" class="datepicker__input form__dateofbirth" propName="DateOfBirth" placeholder="DD/MM/YYYY">
                             </div>
                             <div class="radio">
                                 <div class="radio__title">Giới tính</div>
                                 <div class="radio__select">
-                                    <input type="radio" name="gender" class="radio__button" id="radio__male" checked>
+                                    <input type="radio" name="gender" propName="Gender" value="0" class="radio__button form__gender" id="radio__male" checked>
                                     <label class="radio__label" for="radio__male">Nam</label>
-                                    <input type="radio" name="gender" class="radio__button" id="radio__female">
+                                    <input type="radio" name="gender" propName="Gender" value="1" class="radio__button form__gender" id="radio__female">
                                     <label class="radio__label" for="radio__female">Nữ</label>
-                                    <input type="radio" name="gender" class="radio__button" id="radio__other">
+                                    <input type="radio" name="gender" propName="Gender" value="2" class="radio__button form__gender" id="radio__other">
                                     <label class="radio__label" for="radio__other">Khác</label>
                                 </div>
                             </div>
@@ -308,17 +308,17 @@
                                 <div class="input__label">
                                     Số CMND
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập số CMND">
+                                <input type="text" class="input__field form__personaID" propName="PersonalTaxCode" placeholder="Nhập số CMND">
                             </div>
                             <div class="datepicker">
                                 <div class="datepicker__label">Ngày cấp</div>
-                                <input type="date" class="datepicker__input" placeholder="DD/MM/YYYY">
+                                <input type="date" class="datepicker__input form__createdDate" propName="CreatedDate" placeholder="DD/MM/YYYY">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Nơi cấp
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập nơi cấp">
+                                <input type="text" class="input__field form__createdwhere" placeholder="Nhập nơi cấp">
                             </div>
                         </div>
                         <!-- phần nhập form thứ 3 -->
@@ -327,13 +327,13 @@
                                 <div class="input__label">
                                     Địa chỉ
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập địa chỉ">
+                                <input type="text" class="input__field form__address" placeholder="Nhập địa chỉ">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     ĐT di động
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập số điện thoại di động">
+                                <input type="text" class="input__field form__phonenum" propName="PhoneNumber" placeholder="Nhập số điện thoại di động">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
@@ -345,33 +345,33 @@
                                 <div class="input__label">
                                     Email
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập Email">
+                                <input type="text" class="input__field form__email" propName="Email" placeholder="Nhập Email">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Tài khoản ngân hàng
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập tài khoản ngân hàng">
+                                <input type="text" class="input__field form__banknum" placeholder="Nhập tài khoản ngân hàng">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Tên ngân hàng
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập tên ngân hàng">
+                                <input type="text" class="input__field form__bankname" placeholder="Nhập tên ngân hàng">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Chi nhánh
                                 </div>
-                                <input type="text" class="input__field" placeholder="Nhập chi nhánh">
+                                <input type="text" class="input__field form__bankaddr" placeholder="Nhập chi nhánh">
                             </div>
                         </div>
                     </div>
                     <div class="form__action">
                         <button class="button-second form__cancel" data-title="Đóng (ESC)">Hủy</button>
                         <div class="form__action--right">
-                            <button class="button-second" data-title="cất (ctrl + S)">Cất</button>
-                            <button class="button-primary" data-title="cất và thêm (ctrl + shift + S)">Cất và thêm</button>
+                            <button class="button-second form__save--close" data-title="cất (ctrl + S)">Cất</button>
+                            <button class="button-primary form__save--readd" data-title="cất và thêm (ctrl + shift + S)">Cất và thêm</button>
                         </div>
                     </div>
                     <div class="icon form__help" data-title="Giúp (F1)"></div>

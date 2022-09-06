@@ -63,6 +63,10 @@ $(document).ready(function(){
     $(document).on("click", "#form .form__cancel", handleForm.cancelForm)
     // khi ấn esc thì cũng hiện popup như click vào hủy
     $(document).on("keydown",{event_type: "cancelForm"}, handleKeyDown)
+    // ấn vào nút cất thì tiến hành lưu
+    $(document).on("click", "#form .form__save--close", handleForm.saveClose)
+    // ấn vào nút cât và thêm thì lưu và nhập tiếp
+    $(document).on("click", "#form .form__save--readd", handleForm.saveReAdd)
 
     
     // handle popup ask
