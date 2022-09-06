@@ -32,7 +32,7 @@ $(document).ready(function(){
     // Thêm chức năng khi ấn enter ở button search, reload, page combobox thì sẽ loaddata
     $(document).on("keydown",  ".main .content .content__reloadbtn", {event_type: "loaddata"}, handleKeyDown)
     $(document).on("keydown",  ".main .content .content__searchicon", {event_type: "loaddata"}, handleKeyDown)
-    $(document).on("keydown",  ".combobox__data .combobox__item",  {event_type: "loaddata"},handleKeyDown)
+    $(document).on("keydown",  "#page_ranges .combobox__item",  {event_type: "loaddata"},handleKeyDown)
     
     // khi ấn enter lúc đang tabindex ở nút sửa hoặc icon sửa thì mở context menu
     $(document).on("keydown", ".main .contextmenu__button" , {event_type: "showcontextmenu"}, handleKeyDown)
@@ -74,6 +74,10 @@ $(document).ready(function(){
     // ấn esc thì như ấn hủy (đã viết ở cancelForm bên trên)
     // ấn ctrl + Q sẽ hủy hoàn toàn và thoát khỏi form 
     $(document).on("keydown", handleMultipleKey.ctrlQ)
+    // ấn ctrl + S thì sẽ lưu và ẩn form
+    $(document).on("keydown", handleMultipleKey.ctrlS)
+    // ấn ctrl + shift + S thì sẽ lưu và clear form
+    $(document).on("keydown", handleMultipleKey.ctrlShiftS)
 
 
 

@@ -14,6 +14,7 @@ var handleForm = {
     showForm(){
         try {
             $("#form").addClass(MISAEnum.form.SHOW)
+            $("#form .input__focus").focus()
         } catch (error) {
             console.log(error)
         }
