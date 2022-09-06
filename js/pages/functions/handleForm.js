@@ -101,20 +101,54 @@ var handleForm = {
         data: JSON.stringify(employee),
         dataType: "json",
         contentType: "application/json",
-        success: function(response) {
-            console.log("đã add thành công")
+        success: function (response) {
+          console.log("đã add thành công");
         },
-        error: function(response) {
-            console.log(response)
-        }
-    });
-        // tiến hành xóa input value đi
-        for (const input of inputs) {
-              $(input).val("");
-            }
-        // tiến hành đóng form
-        handleForm.cancelForm()
-        handleForm.exitForm()
+        error: function (response) {
+          console.log(response);
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  /**
+   * Tiến hành lưu và đóng form (lưu 1 records mới)
+   * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
+   */
+  saveClose() {
+    try {
+      handleForm.saveNew();
+      // tiến hành xóa input value đi
+      let inputs = $(
+        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+      );
+      for (const input of inputs) {
+        $(input).val("");
+      }
+      // tiến hành đóng form
+      handleForm.cancelForm();
+      handleForm.exitForm();
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  /**
+   * Tiến hành lưu và nhập mới (lưu nhiều records mới)
+   * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
+   */
+  saveReAdd() {
+    try {
+      handleForm.saveNew();
+      // tiến hành xóa input value đi
+      let inputs = $(
+        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+      );
+      for (const input of inputs) {
+        $(input).val("");
+      }
+      //   lại thêm 1 mã code mới được tạo ra
+      handleForm.getEmCode();
     } catch (error) {
       console.log(error);
     }
