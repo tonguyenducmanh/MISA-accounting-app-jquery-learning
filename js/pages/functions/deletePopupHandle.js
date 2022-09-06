@@ -13,7 +13,6 @@ var deletePopupHandle= {
     delete(e){
         try {
             let recordId = $(e.target).attr("value")
-            console.log(recordId)
             // gọi api xóa đi
             let apiDelete = `${MISAEnum.API.GETEMPLOYEELIST}/${recordId}`
             fetch(apiDelete, {method:"DELETE"})
@@ -44,8 +43,9 @@ var deletePopupHandle= {
             $("#popupAskWarning .popup__text").text(``)
             //  đóng popup này đi
             let popupDelete = $("#popupAskWarning")
-            console.log(popupDelete)
-            $(popupDelete).removeClass(MISAEnum.popup.SHOW)
+            if($(popupDelete).hasClass(MISAEnum.popup.SHOW)){
+                $(popupDelete).removeClass(MISAEnum.popup.SHOW)
+            }
         } catch (error) {
             console.log(error)
         }

@@ -1,10 +1,9 @@
 import editToggle, { clickOutToggle } from "./functions/editToggle.js";
-import hideForm, { clickOutForm } from "./functions/hideForm.js";
 import loadData from "./functions/loadData.js"
-import showForm from "./functions/showForm.js";
 import openDeletePopup from "./functions/openDeletePopup.js";
 import deletePopupHandle from "./functions/deletePopupHandle.js";
 import handleKeyDown from "./functions/handleKeyDown.js";
+import handleForm from "./functions/handleForm.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -24,12 +23,10 @@ $(document).ready(function(){
     // thêm chức năng toggle menu edit tại mỗi records
     $(document).on("click", ".main .contextmenu__button", editToggle)
     $(document).on("click", ".main .contextmenu__dropicon", editToggle)
+    
     // click vào thêm mới thì hiện dialog thêm mới nhân viên
-    $(document).on("click", "#content__addbtn", showForm)
-    
-    // click vào nút hủy hoặc dấu x thì sẽ đóng form thêm mới nhân viên
-    $(document).on("click", ".form .form__cancel", hideForm)
-    
+    // $(document).on("click", "#content__addbtn", handleForm.showForm)
+
     // click vào nút xóa thì truyền id xóa vào trong popup xóa
     $(document).on("click", ".table .contextmenu .contextmenu__deletebtn", openDeletePopup)
     
@@ -45,27 +42,34 @@ $(document).ready(function(){
     
     // enter lúc tabindex vào nút xóa thì truyền id xóa vào trong popup xóa
     $(document).on("keydown", ".table .contextmenu .contextmenu__deletebtn",{event_type: "opendeletepopup"}, handleKeyDown)
-
-    // handle popup xóa
-    // click vào đồng ý hoặc ấn enter trong pop up thì sẽ xóa records đi và load lại bảng
+    
+    // handle popup warning
+    // click vào đồng ý hoặc ấn enter, esc thì sẽ trả về các hành động tương ứng
     $(document).on("click", "#popupAskWarning .button-primary", deletePopupHandle.delete)
     $(document).on("keydown", "#popupAskWarning .button-primary",{event_type: "delete"}, handleKeyDown)
-    
-    // click vào cancel hoặc ấn enter trong pop up thì sẽ hủy xóa đi và clear info
     $(document).on("click", "#popupAskWarning .button-second", deletePopupHandle.cancel)
     $(document).on("keydown", "#popupAskWarning .button-second",{event_type: "cancel"}, handleKeyDown)
+    $( "#popupAskWarning .popup--askwarning" ).draggable();
+    
+    
+    // handle form
+    // click vào nút hủy hoặc dấu x thì sẽ hiện cảnh báo muốn đóng form không
+    $( "#form .form" ).draggable();
+    
+    // handle popup ask
+    $( "#popupAsk .popup--ask" ).draggable();
+
     
     // esc keydown function
     // khi ấn esc thì sẽ đóng các element tương ứng
-    $(document).on("keydown",{event_type: "hideform"}, handleKeyDown)
     $(document).on("keydown",{event_type: "hidecontext"}, handleKeyDown)
     $(document).on("keydown",{event_type: "hidepopupdelete"}, handleKeyDown)
 
     // 1 loạt các sự kiện click ra bên ngoài thì ẩn form, menu,...
     $(document).mouseup(clickOutToggle);
-    $(document).mouseup(clickOutForm);
+    $(document).mouseup(handleForm.clickOutForm);
+    $( "#popupAsk" ).mouseup(clickOutToggle);
+
 
     //1 loạt các sự kiện di chuyển form, popup theo chuột khi grab nó
-    $( "#form .form" ).draggable();
-    $( "#popupAskWarning .popup--askwarning" ).draggable();
 })

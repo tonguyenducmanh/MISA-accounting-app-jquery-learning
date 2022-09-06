@@ -8,6 +8,7 @@
     border-radius: 4px;
     padding: 0 16px;
     cursor: pointer;
+    position: relative;
 }
 
 .button-primary__disable{
@@ -46,6 +47,7 @@
 }
 
 .button-second{
+    position: relative;
     background-color: var(--ColorBackgroundWhite);
     color: var(--ColorTitle);
     font-weight: 600;
