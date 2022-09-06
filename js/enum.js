@@ -36,6 +36,7 @@ var MISAEnum = {
     API:{
         GETEMPLOYEELIST:"https://cukcuk.manhnv.net/api/v1/Employees",
         GETEMPLOYEEFILTER: "https://cukcuk.manhnv.net/api/v1/Employees/filter",
+        NEWEMPLOYEECODE: "https://cukcuk.manhnv.net/api/v1/Employees/NewEmployeeCode",
     },
     table:{
         HIDE: "table__wrap--hide",

@@ -6,14 +6,34 @@
 import MISAEnum from "../../enum.js"
 
 var handleForm = {
-
+    /**
+     * Lấy giá trị mã nhân viên mới được tạo ra từ API.
+     * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
+     */
+    getEmCode(){
+        try {
+            fetch(MISAEnum.API.NEWEMPLOYEECODE, {method: "GET"})
+                .then(res =>res.text())
+                .then(res => {
+                    $("#form .form__ele .form__employeecode").val(res)
+                })
+                .catch(res =>{
+                    console.log(res)
+                })
+        } catch (error) {
+            console.log(error)
+        }
+    },
     /**
      * hiện form khi bấm vào nút thêm mới.
      * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
      */
-    showForm(){
+     showForm(){
         try {
             $("#form").addClass(MISAEnum.form.SHOW)
+            // lấy mã employee code mới được tạo ra từ bên server
+            this.getEmCode()
+            // focus vào ô nhập liệu thứ 2
             $("#form .input__focus").focus()
         } catch (error) {
             console.log(error)
