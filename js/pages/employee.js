@@ -60,8 +60,14 @@ $(document).ready(function(){
     
     // click vào thêm mới thì hiện form thêm mới nhân viên
     $(document).on("click", "#content__addbtn", handleForm.showForm)
+
     // ấn shift + A để hiện form thêm mới nhanh
     $(document).on("keydown", handleMultipleKey.shiftA)
+    
+    // ấn ctrl + K để focus vào ô tìm kiếm
+    $(document).on("keydown", handleMultipleKey.ctrlK)
+
+
     // handle form
     $( "#form .form" ).draggable();
     // click vào nút hủy hoặc dấu x thì sẽ hiện cảnh báo muốn đóng form không

@@ -31,15 +31,12 @@ var handleMultipleKey = {
      * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
      */
     ctrlS(event){
-        if(event[MISAEnum.keyname.control] && event.code === MISAEnum.keyname.s){
+        if(event[MISAEnum.keyname.control] && event.code === MISAEnum.keyname.s && event[MISAEnum.keyname.shift] === false){
             console.log("đã lưu và ẩn")
             // ngăn việc ấn ctrl S lưu web
             event.preventDefault();
             // hàm xử lý lưu vào db
-
-            // ẩn form
-            handleForm.cancelForm()
-            handleForm.exitForm()
+            handleForm.saveClose()
         }
     },
     /**
@@ -49,9 +46,19 @@ var handleMultipleKey = {
     ctrlShiftS(event){
         if(event[MISAEnum.keyname.control] && event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.s){
             console.log("đã lưu và clear form")
-            // hàm xử lý lưu vào db
-
             // hàm clear form
+            handleForm.saveReAdd()
+        }
+    },
+    /**
+     * Khi ấn ctrl + K thì sẽ focus vào trong ô input tìm kiếm bản ghi
+     * Author: Tô Nguyễn Đức Mạnh (07/09/2022)
+     */
+    ctrlK(event){
+        if(event[MISAEnum.keyname.control] && event.code === MISAEnum.keyname.k){
+            // focus vào ô input tìm kiếm
+            event.preventDefault()
+            $(".main #input__search").focus()
         }
     },
 }

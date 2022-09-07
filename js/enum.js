@@ -14,6 +14,7 @@ var MISAEnum = {
         q: "KeyQ",
         s: "KeyS",
         a: "KeyA",
+        k: "KeyK",
         shift: "shiftKey",
     },
     // các từ khóa liên quan tới popup
