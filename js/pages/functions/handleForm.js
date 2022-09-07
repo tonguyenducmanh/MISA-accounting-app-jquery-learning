@@ -40,6 +40,26 @@ var handleForm = {
     }
   },
   /**
+   * hiện form edit có khả năng binding toàn bộ thông tin nhân viên vào trong bảng.
+   * Author: Tô Nguyễn Đức Mạnh (07/09/2022)
+   */
+  showEditForm(e){
+    try {
+      $("#form").addClass(MISAEnum.form.SHOW);
+      // lấy mã ID của records và tạo fetch lên trên db để get data về
+      let currentEle = $(e.target)
+      let currentId = $(currentEle).children()
+      // gọi các giá trị có trong form ra
+      let inputs = $(
+        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+      );
+      // focus vào ô nhập liệu thứ 2
+      $("#form .input__focus").focus();
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  /**
    * show popup khi ấn vào nút x hoặc nút hủy và
    * ẩn popup khi ấn vào nút hủy của popup.
    * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
@@ -96,6 +116,7 @@ var handleForm = {
 
       // tiến hành lưu
       $.ajax({
+        // nếu là mới thì để type là POST, nếu là cũ thì để type là PUT
         type: "POST",
         url: MISAEnum.API.GETEMPLOYEELIST,
         data: JSON.stringify(employee),

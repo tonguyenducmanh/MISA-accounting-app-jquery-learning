@@ -25,6 +25,9 @@ $(document).ready(function(){
     $(document).on("click", ".main .contextmenu__button", editToggle)
     $(document).on("click", ".main .contextmenu__dropicon", editToggle)
 
+    // thêm chức năng ấn double click vào mỗi records thì sẽ hiện form sửa thông tin
+    $(document).on("dblclick", ".main .table__body--real", handleForm.showEditForm )
+
     // click vào nút xóa thì truyền id xóa vào trong popup xóa
     $(document).on("click", ".table .contextmenu .contextmenu__deletebtn", openDeletePopup)
     
