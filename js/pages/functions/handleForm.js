@@ -48,6 +48,8 @@ var handleForm = {
    */
   showEditForm(e) {
     try {
+    //  kiểm tra xem có phải là nút checkbox không, nếu không phải thì mới dùng
+    if(!$(e.target).hasClass("checkbox__label") && !$(e.target).hasClass("contextmenu__button") && !$(e.target).hasClass("contextmenu__dropicon")){
       $("#form").addClass(MISAEnum.form.SHOW);
       // lấy mã ID của record hiện tại
       let currentEle = $(e.target).parent("tr");
@@ -95,6 +97,7 @@ var handleForm = {
       $("#form").attr("form-type", MISAEnum.form.EDIT)
       // focus vào ô nhập liệu thứ 2
       $("#form .input__focus").focus();
+    }
     } catch (error) {
       console.log(error);
     }
