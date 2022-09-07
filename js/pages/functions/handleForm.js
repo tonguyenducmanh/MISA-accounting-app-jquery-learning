@@ -33,6 +33,9 @@ var handleForm = {
       $("#form").addClass(MISAEnum.form.SHOW);
       // lấy mã employee code mới được tạo ra từ bên server
       handleForm.getEmCode();
+      // chuyển trạng thái form từ edit về post
+      $("#form").attr("form-type", MISAEnum.form.CREATE)
+      $("#form").attr("employee-id", "")
       // focus vào ô nhập liệu thứ 2
       $("#form .input__focus").focus();
     } catch (error) {
@@ -43,20 +46,57 @@ var handleForm = {
    * hiện form edit có khả năng binding toàn bộ thông tin nhân viên vào trong bảng.
    * Author: Tô Nguyễn Đức Mạnh (07/09/2022)
    */
-  showEditForm(e){
+  showEditForm(e) {
     try {
       $("#form").addClass(MISAEnum.form.SHOW);
-      // lấy mã ID của records và tạo fetch lên trên db để get data về
-      let currentEle = $(e.target)
-      let currentId = $(currentEle).children()
-      // gọi các giá trị có trong form ra
-      let inputs = $(
-        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
-      );
+      // lấy mã ID của record hiện tại
+      let currentEle = $(e.target).parent("tr");
+      let currentId = $(currentEle).attr("value");
+      $("#form").attr("employee-id", currentId)
+      // tạo fetch để get data về
+      if (currentId != undefined && currentId != "") {
+        fetch(`${MISAEnum.API.GETEMPLOYEELIST}/${currentId}`, { method: "GET" })
+          .then((res) => res.json())
+          .then((res) => {
+            // gọi các giá trị có trong form ra
+            let inputs = $(
+              "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth, #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+            );
+            // gán giá trị trả về từ api vào form
+            for (const input of inputs) {
+              const propName = $(input).attr("propName");
+              if (propName != undefined && propName !="GenderBox") {
+                let temp = res[propName]
+                if(input.hasAttribute("format-date")){
+                  let value = common.formatDate(temp)
+                  value = value.split("/").reverse().join("-")
+                  temp = value
+                }
+                if(input.hasAttribute("format-money")){
+                  temp = common.formatMoneyVND(temp)
+                }
+                $(input).val(temp);
+              }
+            }
+            // gọi riêng trường hợp của select
+            let genders = $("#form .radio__select input")
+            for(const gender of genders){
+              if($(gender).attr("value") == res["Gender"]){
+                $(gender).attr("checked","check")
+              }else{
+                $(gender).removeAttr("checked")
+              }
+            }
+
+          })
+          .catch((res) => console.log(res));
+      }
+      // chuyển trạng thái form từ post về edit
+      $("#form").attr("form-type", MISAEnum.form.EDIT)
       // focus vào ô nhập liệu thứ 2
       $("#form .input__focus").focus();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   },
   /**
@@ -101,7 +141,14 @@ var handleForm = {
       let inputs = $(
         "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
       );
+      let formType = $("#form").attr("form-type")
       var employee = {};
+      // check xem là sửa hay xóa, là sửa thì cần sửa địa chỉ api theo nó
+      let api = MISAEnum.API.GETEMPLOYEELIST
+      if(formType === MISAEnum.form.EDIT){
+        api +=  `/${$("#form").attr("employee-id")}`
+      }
+      // gán các giá trị input vào employee
       for (const input of inputs) {
         const propName = $(input).attr("propName");
         if (propName != undefined) {
@@ -111,14 +158,13 @@ var handleForm = {
           }
         }
       }
-      console.log(employee);
       // kiểm tra xem các giá trị đã hợp lệ chưa
 
       // tiến hành lưu
       $.ajax({
         // nếu là mới thì để type là POST, nếu là cũ thì để type là PUT
-        type: "POST",
-        url: MISAEnum.API.GETEMPLOYEELIST,
+        type: formType,
+        url: api,
         data: JSON.stringify(employee),
         dataType: "json",
         contentType: "application/json",

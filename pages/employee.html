@@ -242,7 +242,7 @@
 
             <!-- phần form -->
 
-            <div class="form__wrap" id="form">
+            <div class="form__wrap" id="form" form-type="POST" employee-id= "">
                 <div class="form">
                     <div class="form__heading">
                         <div class="form__title">
@@ -291,11 +291,11 @@
                         <div class="form__part form__two">
                             <div class="datepicker">
                                 <div class="datepicker__label">Ngày sinh</div>
-                                <input type="date" class="datepicker__input form__dateofbirth" propName="DateOfBirth" placeholder="DD/MM/YYYY">
+                                <input format-date type="date" class="datepicker__input form__dateofbirth" propName="DateOfBirth" placeholder="DD/MM/YYYY">
                             </div>
                             <div class="radio">
                                 <div class="radio__title">Giới tính</div>
-                                <div class="radio__select">
+                                <div propName="GenderBox" class="radio__select">
                                     <input type="radio" name="gender" propName="Gender" value="0" class="radio__button form__gender" id="radio__male" checked>
                                     <label class="radio__label" for="radio__male">Nam</label>
                                     <input type="radio" name="gender" propName="Gender" value="1" class="radio__button form__gender" id="radio__female">
@@ -312,7 +312,7 @@
                             </div>
                             <div class="datepicker">
                                 <div class="datepicker__label">Ngày cấp</div>
-                                <input type="date" class="datepicker__input form__createdDate" propName="CreatedDate" placeholder="DD/MM/YYYY">
+                                <input  format-date type="date" class="datepicker__input form__createdDate" propName="CreatedDate" placeholder="DD/MM/YYYY">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">

@@ -25,6 +25,8 @@ var MISAEnum = {
     },
     form:{
         SHOW: "form__wrap--show",
+        EDIT: "PUT",
+        CREATE: "POST",
     },
     contextMenu:{
         SHOW: "contextmenu__dropicon--clicked",

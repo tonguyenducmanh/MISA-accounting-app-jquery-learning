@@ -5,6 +5,7 @@ import deletePopupHandle from "./functions/deletePopupHandle.js";
 import handleKeyDown from "./functions/handleKeyDown.js";
 import handleForm from "./functions/handleForm.js";
 import handleMultipleKey from "./functions/handleMultipleKeyDown.js";
+import checked from "./functions/checked.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -54,7 +55,8 @@ $(document).ready(function(){
     $(document).on("keydown", "#popupAskWarning .button-second",{event_type: "cancel"}, handleKeyDown)
     $( "#popupAskWarning .popup--askwarning" ).draggable();
     
-    
+    // handle radio button click
+    $(document).on("click", "#form .radio .form__gender", checked)
     
     // click vào thêm mới thì hiện form thêm mới nhân viên
     $(document).on("click", "#content__addbtn", handleForm.showForm)
