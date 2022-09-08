@@ -24,27 +24,33 @@ var MISAEnum = {
         ASK : "popup--ask",
         SHOW: "popup__wrap--show",
     },
+    // các từ khóa liên quan tới form
     form:{
         SHOW: "form__wrap--show",
         EDIT: "PUT",
         CREATE: "POST",
     },
+    // các từ khóa liên quan tới contextmenu
     contextMenu:{
         SHOW: "contextmenu__dropicon--clicked",
     },
+    // các từ khóa liên quan tới phân trang
     pageNavigation:{
         DISABLE: "page__number--disable",
         SELECTED: "page__count--selected"
     },
+    // các địa chỉ api
     API:{
         GETEMPLOYEELIST:"https://cukcuk.manhnv.net/api/v1/Employees",
         GETEMPLOYEEFILTER: "https://cukcuk.manhnv.net/api/v1/Employees/filter",
         NEWEMPLOYEECODE: "https://cukcuk.manhnv.net/api/v1/Employees/NewEmployeeCode",
     },
+    // các từ khóa liên quan tới table
     table:{
         HIDE: "table__wrap--hide",
     },
-
+    // ngôn ngữ hiện tại đang dùng là tiếng Việt
+    language:"VI",
 }
 
 export default MISAEnum

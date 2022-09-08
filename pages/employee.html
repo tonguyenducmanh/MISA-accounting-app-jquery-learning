@@ -285,6 +285,7 @@
                                 </div>
                                 <input type="text" class="input__field input__focus form__employeecode input__musthave"
                                     propName="EmployeeCode" placeholder="Nhập mã nhân viên"
+                                    validate="EmployeeCodeNotEmpty"
                                 />
                             </div>
                             <div class="input form__ele"
@@ -295,6 +296,7 @@
                                 </div>
                                 <input type="text" class="input__field form__employeename input__musthave"
                                     propName="FullName" placeholder="Nhập họ và tên"
+                                    validate="EmployeeNameNotEmpty"
                                 >
                             </div>
                             <div class="input form__ele">
@@ -302,7 +304,7 @@
                                     Đơn vị <span class="input__label--alert">*</span>
                                 </div>
                                 <mcombobox id="cbxDepartment" class="input__field input__musthave" data-title ="Đơn vị không được để trống."
-                                    propName="DepartmentName"
+                                    propName="DepartmentName" validate="DepartmentName"
                                     api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
                                     value="DepartmentId" placeholder="Nhập đơn vị">
                                 </mcombobox>
@@ -449,9 +451,21 @@
                 </div>
             </div>
 
-            <!-- phần popup trùng id -->
 
             <!-- phần popup nhập lỗi -->
+            <div class="popup__wrap" id="popupAlert">
+                <div class="popup popup--alert">
+                    <div class="popup__content">
+                        <div class="icon popup__icon"></div>
+                        <div class="popup__text"></div>
+                    </div>
+                    <div class="popup__action">
+                        <button class="button-primary">Đóng</button>
+                    </div>
+                </div>
+            </div>
+            <!-- phần popup trùng id -->
+
         </div>
     </div>
 

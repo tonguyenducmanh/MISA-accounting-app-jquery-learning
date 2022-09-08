@@ -32,7 +32,6 @@ var handleMultipleKey = {
      */
     ctrlS(event){
         if(event[MISAEnum.keyname.control] && event.code === MISAEnum.keyname.s && event[MISAEnum.keyname.shift] === false){
-            console.log("đã lưu và ẩn")
             // ngăn việc ấn ctrl S lưu web
             event.preventDefault();
             // hàm xử lý lưu vào db
@@ -45,7 +44,6 @@ var handleMultipleKey = {
      */
     ctrlShiftS(event){
         if(event[MISAEnum.keyname.control] && event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.s){
-            console.log("đã lưu và clear form")
             // hàm clear form
             handleForm.saveReAdd()
         }

@@ -7,6 +7,7 @@ import handleForm from "./functions/handleForm.js";
 import handleMultipleKey from "./functions/handleMultipleKeyDown.js";
 import checked from "./functions/checked.js";
 import validate from "./functions/validate.js";
+import alertPopupHandle from "./functions/alertPopupHandle.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -95,6 +96,11 @@ $(document).ready(function(){
     // ấn ctrl + shift + S thì sẽ lưu và clear form
     $(document).on("keydown", handleMultipleKey.ctrlShiftS)
 
+    // handle alert popup
+    $( "#popupAlert .popup--alert" ).draggable();
+    // thêm tính năng ấn vào nút đóng thì ẩn form
+    $(document).on("click", "#popupAlert .popup--alert .button-primary", alertPopupHandle);
+
     // form validate
     $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)
 
@@ -106,5 +112,4 @@ $(document).ready(function(){
 
 
 
-    //1 loạt các sự kiện di chuyển form, popup theo chuột khi grab nó
 })
