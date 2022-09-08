@@ -164,15 +164,3 @@ body {
   font-weight: 500;
   font-size: 14px;
 }
-
-/* 
-  Thêm css cho phần focus bằng tab index
-*/
-
-.using-mouse :focus {
-  outline: none;
-}
-
-.using-keyboard :focus {
-  outline:  1px solid var(--LightGreen500);
-}

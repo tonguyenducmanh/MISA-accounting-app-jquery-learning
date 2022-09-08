@@ -165,7 +165,6 @@
 
 .table__wrap .table .checkbox__button + .checkbox__label{
     padding-left: 0px;
-    width: 18px;
 }
 
 .table__wrap .table .table__thcheck{
@@ -188,12 +187,10 @@
     background-color: var(--ColorBackgroundWhite);
 }
 .table__wrap .table .checkbox{
-    margin-right: 16px;
     margin-left: 16px;
 }
 
 .table__wrap .table tr td:not(:first-child, :last-child){
-    text-align: left;
     box-sizing: border-box;
     padding: 0px 16px;
 }

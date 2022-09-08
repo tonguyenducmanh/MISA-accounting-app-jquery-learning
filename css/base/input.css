@@ -48,6 +48,10 @@
     border: 1px solid var(--ColorAlert);
 }
 
+.input__field--alert:hover{
+    border: 1px solid var(--ColorAlert);
+}
+
 .input__warp{
     position: relative;
 }
