@@ -169,7 +169,7 @@ var handleForm = {
    * thực hiện lưu vào database và đóng form đi
    * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
    */
-  saveNew(e) {
+  saveNew(type) {
     try {
       // kiểm tra xem mã Id có bị trùng chưa, nếu trùng return false luôn
       let currentId = $("#form #input__checkId").val();
@@ -227,7 +227,10 @@ var handleForm = {
               // có 2 kiểu ấn lưu, 1 kiểu là ấn click chuột, 1 kiểu là ấn ctrl + S, thì ấn kiểu chuột
               // Jquery không hỗ trợ truyền param vào function click nên phải qua e.data.event_type
               // còn ctrl + S thì truyền được
-              let typeClick =e.data.event_type
+              let typeClick =type
+              if(typeClick != MISAEnum.saveType.save && typeClick != MISAEnum.saveType.saveAndAdd){
+                typeClick = e.data.event_type
+              }
               // check xem kiểu lưu là cất hay cất và thêm ?
               if(typeClick == MISAEnum.saveType.save){
                 // là cất thì ẩn form xóa data
@@ -259,7 +262,6 @@ var handleForm = {
         for (const input of inputs) {
           $(input).val("");
         }
-        debugger;
         // tiến hành đóng form
         handleForm.cancelForm();
         handleForm.exitForm();
@@ -284,6 +286,28 @@ var handleForm = {
         handleForm.getEmCode();
     } catch (error) {
       console.log(error);
+    }
+  },
+  /**
+   * Tạo ra 1 function phụ để truyền param save
+   * Author : Tô Nguyễn Đức Mạnh (08/09/2022)
+   */
+  clickSave(){
+    try {
+      handleForm.saveNew(MISAEnum.saveType.save)
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  /**
+   * Tạo ra 1 function phụ để truyền param save and add
+   * Author : Tô Nguyễn Đức Mạnh (08/09/2022)
+   */
+  clickSaveAndAdd(){
+    try {
+      handleForm.saveNew(MISAEnum.saveType.saveAndAdd)
+    } catch (error) {
+      console.log(error)
     }
   },
 };
