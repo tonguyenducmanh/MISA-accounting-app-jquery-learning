@@ -196,9 +196,7 @@ var handleForm = {
             let checkBeforeSave = validate.checkBeforeSave();
             // nếu trường hợp input có trống hiện alert ngay
             if (checkBeforeSave === false) {
-              // hiện popup cảnh báo
-              let popupAlert = $("#popupAlert");
-              $(popupAlert).addClass(MISAEnum.popup.SHOW);
+              alertPopupHandle.showPopup()
               return false;
             } else {
               // lấy ra các input value
@@ -228,9 +226,6 @@ var handleForm = {
               // Jquery không hỗ trợ truyền param vào function click nên phải qua e.data.event_type
               // còn ctrl + S thì truyền được
               let typeClick =type
-              if(typeClick != MISAEnum.saveType.save && typeClick != MISAEnum.saveType.saveAndAdd){
-                typeClick = e.data.event_type
-              }
               // check xem kiểu lưu là cất hay cất và thêm ?
               if(typeClick == MISAEnum.saveType.save){
                 // là cất thì ẩn form xóa data

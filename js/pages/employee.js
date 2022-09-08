@@ -101,7 +101,7 @@ $(document).ready(function(){
     // handle alert popup
     $( "#popupAlert .popup--alert" ).draggable();
     // thêm tính năng ấn vào nút đóng thì ẩn form
-    $(document).on("click", "#popupAlert .popup--alert .button-primary", alertPopupHandle);
+    $(document).on("click", "#popupAlert .popup--alert .button-primary", alertPopupHandle.hidePopup);
 
     // handle wanring same Id
     $( "#popupWarning .popup--warning" ).draggable();

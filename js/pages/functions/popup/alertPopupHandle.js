@@ -7,6 +7,19 @@ import MISAEnum from "../../../enum.js"
 import MISAResource from "../../../resource.js"
 
 var alertPopupHandle = {
+    /**
+     * Hiện popup cảnh báo trùng
+     * Author : Tô Nguyễn Đức Mạnh (08/09/2022)
+     */
+    showPopup(){
+        // hiện popup cảnh báo
+        let popupAlert = $("#popupAlert");
+        $(popupAlert).addClass(MISAEnum.popup.SHOW);
+    },
+    /**
+     * Ẩn popup cảnh báo trùng
+     * Author : Tô Nguyễn Đức Mạnh (08/09/2022)
+     */
     hidePopup(){
         {
             try {
@@ -19,6 +32,10 @@ var alertPopupHandle = {
             }
         }
     },
+    /**
+     * Tạo ra đoạn text cảnh báo trùng Id
+     * Author : Tô Nguyễn Đức Mạnh (08/09/2022)
+     */
     generateText(currentId){
          // gọi ngôn ngữ text định chèn
          let language = MISAEnum.language;
