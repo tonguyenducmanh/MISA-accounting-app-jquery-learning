@@ -96,8 +96,7 @@ $(document).ready(function(){
     $(document).on("keydown", handleMultipleKey.ctrlShiftS)
 
     // form validate
-    $(document).on("blur", ".form__body .input__mushave", validate.mustHaveCheck)
-
+    $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)
     
     // esc keydown function
     // khi ấn esc thì sẽ đóng các element tương ứng

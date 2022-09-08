@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <title>AMIS kế toán - Quản lý nhân viên</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
+
 <body>
     <div class="container">
         <div class="navbar">
@@ -153,8 +155,10 @@
                     <div tabindex="0" class="icon header__menubtn" data-title="Ẩn hiện menu">
 
                     </div>
-                    <div class="header__name" data-title="Công ty tnhh sản xuất - thương mại - dịch vụ qui phúc">Công ty tnhh sản xuất - thương mại - dịch vụ qui phúc</div>
-                    <div tabindex="0" class="icon header__dropicon"  data-title="Công ty tnhh sản xuất - thương mại - dịch vụ qui phúc"></div>
+                    <div class="header__name" data-title="Công ty tnhh sản xuất - thương mại - dịch vụ qui phúc">Công ty
+                        tnhh sản xuất - thương mại - dịch vụ qui phúc</div>
+                    <div tabindex="0" class="icon header__dropicon"
+                        data-title="Công ty tnhh sản xuất - thương mại - dịch vụ qui phúc"></div>
                 </div>
                 <div class="header__right">
                     <div tabindex="0" class="icon header__noti" data-title="Thông báo"></div>
@@ -171,14 +175,16 @@
             <div class="content">
                 <div class="content__top">
                     <div class="content__label">Nhân viên</div>
-                    <button tabindex="0" class="button-primary content__addbtn" id="content__addbtn" data-title="Nhấn Shift + A để thêm nhanh">Thêm mới nhân viên</button>
+                    <button tabindex="0" class="button-primary content__addbtn" id="content__addbtn"
+                        data-title="Nhấn Shift + A để thêm nhanh">Thêm mới nhân viên</button>
                 </div>
                 <div class="content__bottom">
                     <div class="content__menu">
                         <div class="content__menuleft"> Đã chọn x nhân viên</div>
                         <div class="content__menuright">
                             <div class="input__warp content__search">
-                                <input tabindex="0" id="input__search" type="text" class="input__field  input__field--italic" placeholder="Tìm theo mã, tên nhân viên">
+                                <input tabindex="0" id="input__search" type="text"
+                                    class="input__field  input__field--italic" placeholder="Tìm theo mã, tên nhân viên">
                                 <span tabindex="0" class="icon input__icon content__searchicon"></span>
                             </div>
                             <div tabindex="0" class="icon content__reloadbtn" data-title="Lấy lại dữ liệu"></div>
@@ -190,25 +196,33 @@
                         <table class="table" id="table__employee">
                             <thead>
                                 <tr>
-                                    <th class="table__th table__thcheck">    
+                                    <th class="table__th table__thcheck">
                                         <div class="checkbox">
                                             <input type="checkbox" class="checkbox__button" id="checkbox_all">
                                             <label tabindex="0" class="checkbox__label" for="checkbox_all"></label>
                                         </div>
                                     </th>
-                                    <th class="text__align--left" propName="EmployeeCode" style="width: 150px">Mã nhân viên</th>
-                                    <th class="text__align--left" propName="FullName" style="width: 200px">Tên nhân viên</th>
-                                    <th class="text__align--left" format-gender propName="Gender" style="width: 110px">Giới tính</th>
-                                    <th class="text__align--center" format-date propName="DateOfBirth" style="width: 130px">Ngày sinh</th>
-                                    <th class="text__align--left" propName="PersonalTaxCode" style="width: 200px">Số CMND</th>
-                                    <th class="text__align--left" propName="PositionName" style="width: 200px">Chức danh</th>
-                                    <th class="text__align--left" propName="DepartmentName" style="width: 250px">Tên đơn vị</th>
+                                    <th class="text__align--left" propName="EmployeeCode" style="width: 150px">Mã nhân
+                                        viên</th>
+                                    <th class="text__align--left" propName="FullName" style="width: 200px">Tên nhân viên
+                                    </th>
+                                    <th class="text__align--left" format-gender propName="Gender" style="width: 110px">
+                                        Giới tính</th>
+                                    <th class="text__align--center" format-date propName="DateOfBirth"
+                                        style="width: 130px">Ngày sinh</th>
+                                    <th class="text__align--left" propName="PersonalTaxCode" style="width: 200px">Số
+                                        CMND</th>
+                                    <th class="text__align--left" propName="PositionName" style="width: 200px">Chức danh
+                                    </th>
+                                    <th class="text__align--left" propName="DepartmentName" style="width: 250px">Tên đơn
+                                        vị</th>
                                     <th class="text__align--left" propName="" style="width: 200px">Số tài khoản</th>
                                     <th class="text__align--left" propName="" style="width: 250px">Tên ngân hàng</th>
-                                    <th class="text__align--left" propName="" style="width: 250px">Chi nhánh TK ngân hàng</th>
+                                    <th class="text__align--left" propName="" style="width: 250px">Chi nhánh TK ngân
+                                        hàng</th>
                                     <th class="text__align--center" propName="" style="width: 100px">Chức năng</th>
                                 </tr>
-                            </thead> 
+                            </thead>
                             <tbody class="table__body--real">
                                 <!-- bảng trả về từ api hiển thị ở đây -->
                             </tbody>
@@ -221,10 +235,9 @@
                             <span>bản ghi</span>
                         </div>
                         <div class="page__categories">
-                            <mcombobox id="page_ranges" placeholder="20 bản ghi trên 1 trang" defaultValue="10 bản ghi trên 1 trang"
-                                unique="10"
-                                data="10 bản ghi trên 1 trang: 10;20 bản ghi trên 1 trang: 20;30 bản ghi trên 1 trang: 30;50 bản ghi trên 1 trang: 50;100 bản ghi trên 1 trang: 100"
-                                >
+                            <mcombobox id="page_ranges" placeholder="20 bản ghi trên 1 trang"
+                                defaultValue="10 bản ghi trên 1 trang" unique="10"
+                                data="10 bản ghi trên 1 trang: 10;20 bản ghi trên 1 trang: 20;30 bản ghi trên 1 trang: 30;50 bản ghi trên 1 trang: 50;100 bản ghi trên 1 trang: 100">
                             </mcombobox>
                             <div class="page__number">
                                 <div tabindex="0" class="page__prev page__number--disable">Trước</div>
@@ -242,7 +255,7 @@
 
             <!-- phần form -->
 
-            <div class="form__wrap" id="form" form-type="POST" employee-id= "">
+            <div class="form__wrap" id="form" form-type="POST" employee-id="">
                 <div class="form">
                     <div class="form__heading">
                         <div class="form__title">
@@ -260,23 +273,33 @@
                     <div class="form__body">
                         <!-- phần nhập form thứ nhất -->
                         <div class="form__part form__one">
-                            <div class="input form__ele">
+                            <div class="input form__ele"
+                                data-title="Mã không được để trống"    
+                            >
                                 <div class="input__label">
                                     Mã <span class="input__label--alert">*</span>
                                 </div>
-                                <input type="text" class="input__field input__mushave form__employeecode" propName="EmployeeCode" placeholder="Nhập mã nhân viên">
+                                <input type="text" class="input__field form__employeecode input__musthave"
+                                    propName="EmployeeCode" placeholder="Nhập mã nhân viên"
+                                />
                             </div>
-                            <div class="input form__ele">
+                            <div class="input form__ele"
+                                data-title="Tên không được để trống"    
+                            >
                                 <div class="input__label">
                                     Tên <span class="input__label--alert">*</span>
                                 </div>
-                                <input type="text" class="input__field input__mushave input__focus form__employeename" propName="FullName" placeholder="Nhập họ và tên">
+                                <input type="text" class="input__field input__focus form__employeename input__musthave"
+                                    propName="FullName" placeholder="Nhập họ và tên"
+                                >
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Đơn vị <span class="input__label--alert">*</span>
                                 </div>
-                                <mcombobox id="cbxDepartment" propName="DepartmentName" api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
+                                <mcombobox id="cbxDepartment" class="input__field input__focus input__musthave" data-title ="Đơn vị không được để trống"
+                                    propName="DepartmentName"
+                                    api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
                                     value="DepartmentId" placeholder="Nhập đơn vị">
                                 </mcombobox>
                             </div>
@@ -284,23 +307,28 @@
                                 <div class="input__label">
                                     Chức danh
                                 </div>
-                                <input type="text" class="input__field form__positionname" propName="PositionName" placeholder="Nhập chức danh">
+                                <input type="text" class="input__field form__positionname" propName="PositionName"
+                                    placeholder="Nhập chức danh">
                             </div>
                         </div>
                         <!-- phần nhập form thứ 2 -->
                         <div class="form__part form__two">
                             <div class="datepicker">
                                 <div class="datepicker__label">Ngày sinh</div>
-                                <input format-date type="date" class="datepicker__input form__dateofbirth" propName="DateOfBirth" placeholder="DD/MM/YYYY">
+                                <input format-date type="date" class="datepicker__input form__dateofbirth"
+                                    propName="DateOfBirth" placeholder="DD/MM/YYYY">
                             </div>
                             <div class="radio">
                                 <div class="radio__title">Giới tính</div>
                                 <div propName="GenderBox" class="radio__select">
-                                    <input type="radio" name="gender" propName="Gender" value="0" class="radio__button form__gender" id="radio__male" checked>
+                                    <input type="radio" name="gender" propName="Gender" value="0"
+                                        class="radio__button form__gender" id="radio__male" checked>
                                     <label class="radio__label" for="radio__male">Nam</label>
-                                    <input type="radio" name="gender" propName="Gender" value="1" class="radio__button form__gender" id="radio__female">
+                                    <input type="radio" name="gender" propName="Gender" value="1"
+                                        class="radio__button form__gender" id="radio__female">
                                     <label class="radio__label" for="radio__female">Nữ</label>
-                                    <input type="radio" name="gender" propName="Gender" value="2" class="radio__button form__gender" id="radio__other">
+                                    <input type="radio" name="gender" propName="Gender" value="2"
+                                        class="radio__button form__gender" id="radio__other">
                                     <label class="radio__label" for="radio__other">Khác</label>
                                 </div>
                             </div>
@@ -308,11 +336,13 @@
                                 <div class="input__label">
                                     Số CMND
                                 </div>
-                                <input type="text" class="input__field form__personaID" propName="PersonalTaxCode" placeholder="Nhập số CMND">
+                                <input type="text" class="input__field form__personaID" propName="PersonalTaxCode"
+                                    placeholder="Nhập số CMND">
                             </div>
                             <div class="datepicker">
                                 <div class="datepicker__label">Ngày cấp</div>
-                                <input  format-date type="date" class="datepicker__input form__createdDate" propName="CreatedDate" placeholder="DD/MM/YYYY">
+                                <input format-date type="date" class="datepicker__input form__createdDate"
+                                    propName="CreatedDate" placeholder="DD/MM/YYYY">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
@@ -333,7 +363,8 @@
                                 <div class="input__label">
                                     ĐT di động
                                 </div>
-                                <input type="text" class="input__field form__phonenum" propName="PhoneNumber" placeholder="Nhập số điện thoại di động">
+                                <input type="text" class="input__field form__phonenum" propName="PhoneNumber"
+                                    placeholder="Nhập số điện thoại di động">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
@@ -345,13 +376,15 @@
                                 <div class="input__label">
                                     Email
                                 </div>
-                                <input type="text" class="input__field form__email" propName="Email" placeholder="Nhập Email">
+                                <input type="text" class="input__field form__email" propName="Email"
+                                    placeholder="Nhập Email">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Tài khoản ngân hàng
                                 </div>
-                                <input type="text" class="input__field form__banknum" placeholder="Nhập tài khoản ngân hàng">
+                                <input type="text" class="input__field form__banknum"
+                                    placeholder="Nhập tài khoản ngân hàng">
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
@@ -371,10 +404,12 @@
                         <button class="button-second form__cancel" data-title="Đóng (ESC)">Hủy</button>
                         <div class="form__action--right">
                             <button class="button-second form__save--close" data-title="cất (ctrl + S)">Cất</button>
-                            <button class="button-primary form__save--readd" data-title="cất và thêm (ctrl + shift + S)">Cất và thêm</button>
+                            <button class="button-primary form__save--readd"
+                                data-title="cất và thêm (ctrl + shift + S)">Cất và thêm</button>
                         </div>
                     </div>
-                    <div class="icon form__help" data-title="Form thêm mới nhân viên, vui lòng điền đầy đủ các mục có dấu *"></div>
+                    <div class="icon form__help"
+                        data-title="Form thêm mới nhân viên, vui lòng điền đầy đủ các mục có dấu *"></div>
                     <div class="icon form__closebtn form__cancel" data-title="Đóng (ESC)"></div>
                 </div>
             </div>
@@ -393,7 +428,7 @@
                 </div>
             </div>
             <!-- phần popup hỏi muốn lưu không -->
-            
+
             <div class="popup__wrap" id="popupAsk">
                 <div class="popup popup--ask">
                     <div class="popup__content">
@@ -425,4 +460,5 @@
     <!-- script dùng riêng -->
     <script type="module" src="../js/pages/employee.js"></script>
 </body>
+
 </html>

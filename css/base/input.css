@@ -1,6 +1,7 @@
 .input{
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 
 .input__label{
@@ -50,6 +51,36 @@
 
 .input__field--alert:hover{
     border: 1px solid var(--ColorAlert);
+}
+
+.input__field--alert:hover:focus{
+    border: 1px solid var(--ColorAlert);
+}
+
+/* 
+    tùy chỉnh position thông báo lỗi
+*/
+
+.form__body .form__ele:hover::after{
+    display: none ;
+}
+
+.form__body .form__ele:has(.input__field--alert):hover::after{
+    display: block ;
+    top:100%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
+
+#cbxDepartment:hover::after{
+    display: none ;
+}
+
+#cbxDepartment:has(.input__field--alert):hover::after{
+    display: block ;
+    top:100%;
+    left: 50%;
+    transform: translate(-50%, -25%);
 }
 
 .input__warp{
