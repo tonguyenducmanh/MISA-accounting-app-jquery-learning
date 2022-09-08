@@ -4,6 +4,7 @@
  */
 
 import MISAEnum from "../../enum.js";
+import validate from "./validate.js";
 
 var handleForm = {
   /**
@@ -161,24 +162,35 @@ var handleForm = {
           }
         }
       }
-      // kiểm tra xem các giá trị đã hợp lệ chưa
-
-      // tiến hành lưu
-      $.ajax({
-        // nếu là mới thì để type là POST, nếu là cũ thì để type là PUT
-        type: formType,
-        url: api,
-        data: JSON.stringify(employee),
-        dataType: "json",
-        contentType: "application/json",
-        success: function (response) {
-          console.log("đã add thành công");
-        },
-        error: function (response) {
-          console.log(response);
-        },
-      });
-      debugger
+      // kiểm tra xem các giá trị đã hợp lệ chưa, nếu chưa hợp lệ return false luôn
+      // và cũng show popup cảnh báo
+      // nếu hợp lệ thì thực hiện POST lên server
+      let checkBeforeSave = validate.checkBeforeSave()
+      if(checkBeforeSave === true){
+        // tiến hành lưu
+        $.ajax({
+          // nếu là mới thì để type là POST, nếu là cũ thì để type là PUT
+          type: formType,
+          url: api,
+          data: JSON.stringify(employee),
+          dataType: "json",
+          contentType: "application/json",
+          success: function (response) {
+            console.log("đã add thành công");
+          },
+          error: function (response) {
+            console.log(response);
+          },
+        });
+        return true
+      }
+      else{
+        // hiện popup cảnh báo
+        let popupAlert = $("#popupAlert")
+        $(popupAlert).addClass(MISAEnum.popup.SHOW)
+        return false
+      }
+      
     } catch (error) {
       console.log(error);
     }
@@ -189,17 +201,21 @@ var handleForm = {
    */
   saveClose() {
     try {
-      handleForm.saveNew();
-      // tiến hành xóa input value đi
-      let inputs = $(
-        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
-      );
-      for (const input of inputs) {
-        $(input).val("");
+      // gọi hàm lưu và đợi kết quả trả về, nếu trả về true thì đóng form và xóa các value đã nhập
+      // nếu trả về false thì kết thúc hàm luôn và không đóng form hay xóa value
+      let result = handleForm.saveNew();
+      if(result === true){
+        // tiến hành xóa input value đi
+        let inputs = $(
+          "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+        );
+        for (const input of inputs) {
+          $(input).val("");
+        }
+        // tiến hành đóng form
+        handleForm.cancelForm();
+        handleForm.exitForm();
       }
-      // tiến hành đóng form
-      handleForm.cancelForm();
-      handleForm.exitForm();
     } catch (error) {
       console.log(error);
     }
@@ -210,16 +226,18 @@ var handleForm = {
    */
   saveReAdd() {
     try {
-      handleForm.saveNew();
-      // tiến hành xóa input value đi
-      let inputs = $(
-        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
-      );
-      for (const input of inputs) {
-        $(input).val("");
+      let result = handleForm.saveNew();
+      if(result === true){
+        // tiến hành xóa input value đi
+        let inputs = $(
+          "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+        );
+        for (const input of inputs) {
+          $(input).val("");
+        }
+        //   lại thêm 1 mã code mới được tạo ra
+        handleForm.getEmCode();
       }
-      //   lại thêm 1 mã code mới được tạo ra
-      handleForm.getEmCode();
     } catch (error) {
       console.log(error);
     }

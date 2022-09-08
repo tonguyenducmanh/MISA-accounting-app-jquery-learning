@@ -7,6 +7,7 @@ import handleForm from "./functions/handleForm.js";
 import handleMultipleKey from "./functions/handleMultipleKeyDown.js";
 import checked from "./functions/checked.js";
 import validate from "./functions/validate.js";
+import alertPopupHandle from "./functions/alertPopupHandle.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -21,7 +22,7 @@ $(document).ready(function(){
     // chọn số lượng page trên 1 trang cũng thế (3 nút có vai trò như nhau)
     $(document).on("click", ".main .content .content__reloadbtn", loadData);
     $(document).on("click", ".main .content .content__searchicon" , loadData )
-    $(document).on("click", ".combobox__data .combobox__item", loadData)
+    $(document).on("click", "#page_ranges .combobox__data .combobox__item", loadData)
     
     // thêm chức năng toggle menu edit tại mỗi records
     $(document).on("click", ".main .contextmenu__button", editToggle)
@@ -95,9 +96,14 @@ $(document).ready(function(){
     // ấn ctrl + shift + S thì sẽ lưu và clear form
     $(document).on("keydown", handleMultipleKey.ctrlShiftS)
 
+    // handle alert popup
+    $( "#popupAlert .popup--alert" ).draggable();
+    // thêm tính năng ấn vào nút đóng thì ẩn form
+    $(document).on("click", "#popupAlert .popup--alert .button-primary", alertPopupHandle);
+
     // form validate
     $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)
-    
+
     // esc keydown function
     // khi ấn esc thì sẽ đóng các element tương ứng
     $(document).on("keydown",{event_type: "hidecontext"}, handleKeyDown)
@@ -106,5 +112,4 @@ $(document).ready(function(){
 
 
 
-    //1 loạt các sự kiện di chuyển form, popup theo chuột khi grab nó
 })

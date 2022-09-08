@@ -182,10 +182,13 @@
                     <div class="content__menu">
                         <div class="content__menuleft"> Đã chọn x nhân viên</div>
                         <div class="content__menuright">
-                            <div class="input__warp content__search">
+                            <div class="input__warp content__search" 
+                                data-title="Ấn ctrl + K để nhập"
+                            >
                                 <input tabindex="0" id="input__search" type="text"
                                     class="input__field  input__field--italic" placeholder="Tìm theo mã, tên nhân viên">
-                                <span tabindex="0" class="icon input__icon content__searchicon"></span>
+                                <span tabindex="0" class="icon input__icon content__searchicon"
+                                ></span>
                             </div>
                             <div tabindex="0" class="icon content__reloadbtn" data-title="Lấy lại dữ liệu"></div>
                         </div>
@@ -237,6 +240,7 @@
                         <div class="page__categories">
                             <mcombobox id="page_ranges" placeholder="20 bản ghi trên 1 trang"
                                 defaultValue="10 bản ghi trên 1 trang" unique="10"
+                                class="input__field"
                                 data="10 bản ghi trên 1 trang: 10;20 bản ghi trên 1 trang: 20;30 bản ghi trên 1 trang: 30;50 bản ghi trên 1 trang: 50;100 bản ghi trên 1 trang: 100">
                             </mcombobox>
                             <div class="page__number">
@@ -274,31 +278,33 @@
                         <!-- phần nhập form thứ nhất -->
                         <div class="form__part form__one">
                             <div class="input form__ele"
-                                data-title="Mã không được để trống"    
+                                data-title="Mã không được để trống."    
                             >
                                 <div class="input__label">
                                     Mã <span class="input__label--alert">*</span>
                                 </div>
-                                <input type="text" class="input__field form__employeecode input__musthave"
+                                <input type="text" class="input__field input__focus form__employeecode input__musthave"
                                     propName="EmployeeCode" placeholder="Nhập mã nhân viên"
+                                    validate="EmployeeCodeNotEmpty"
                                 />
                             </div>
                             <div class="input form__ele"
-                                data-title="Tên không được để trống"    
+                                data-title="Tên không được để trống."    
                             >
                                 <div class="input__label">
                                     Tên <span class="input__label--alert">*</span>
                                 </div>
-                                <input type="text" class="input__field input__focus form__employeename input__musthave"
+                                <input type="text" class="input__field form__employeename input__musthave"
                                     propName="FullName" placeholder="Nhập họ và tên"
+                                    validate="EmployeeNameNotEmpty"
                                 >
                             </div>
                             <div class="input form__ele">
                                 <div class="input__label">
                                     Đơn vị <span class="input__label--alert">*</span>
                                 </div>
-                                <mcombobox id="cbxDepartment" class="input__field input__focus input__musthave" data-title ="Đơn vị không được để trống"
-                                    propName="DepartmentName"
+                                <mcombobox id="cbxDepartment" class="input__field input__musthave" data-title ="Đơn vị không được để trống."
+                                    propName="DepartmentName" validate="DepartmentName"
                                     api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
                                     value="DepartmentId" placeholder="Nhập đơn vị">
                                 </mcombobox>
@@ -445,9 +451,21 @@
                 </div>
             </div>
 
-            <!-- phần popup trùng id -->
 
             <!-- phần popup nhập lỗi -->
+            <div class="popup__wrap" id="popupAlert">
+                <div class="popup popup--alert">
+                    <div class="popup__content">
+                        <div class="icon popup__icon"></div>
+                        <div class="popup__text"></div>
+                    </div>
+                    <div class="popup__action">
+                        <button class="button-primary">Đóng</button>
+                    </div>
+                </div>
+            </div>
+            <!-- phần popup trùng id -->
+
         </div>
     </div>
 
