@@ -14,6 +14,7 @@ var MISAEnum = {
         q: "KeyQ",
         s: "KeyS",
         a: "KeyA",
+        k: "KeyK",
         shift: "shiftKey",
     },
     // các từ khóa liên quan tới popup
@@ -25,6 +26,8 @@ var MISAEnum = {
     },
     form:{
         SHOW: "form__wrap--show",
+        EDIT: "PUT",
+        CREATE: "POST",
     },
     contextMenu:{
         SHOW: "contextmenu__dropicon--clicked",

@@ -11,7 +11,7 @@
 .checkbox .checkbox__button + .checkbox__label{
     position: relative;
     width: 100%;
-    height: 16px;
+    height: 18px;
     padding-left: 24px;
     cursor: pointer;
 }

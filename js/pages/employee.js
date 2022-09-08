@@ -5,6 +5,8 @@ import deletePopupHandle from "./functions/deletePopupHandle.js";
 import handleKeyDown from "./functions/handleKeyDown.js";
 import handleForm from "./functions/handleForm.js";
 import handleMultipleKey from "./functions/handleMultipleKeyDown.js";
+import checked from "./functions/checked.js";
+import validate from "./functions/validate.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -24,6 +26,9 @@ $(document).ready(function(){
     // thêm chức năng toggle menu edit tại mỗi records
     $(document).on("click", ".main .contextmenu__button", editToggle)
     $(document).on("click", ".main .contextmenu__dropicon", editToggle)
+
+    // thêm chức năng ấn double click vào mỗi records thì sẽ hiện form sửa thông tin
+    $(document).on("dblclick", ".main .table__body--real", handleForm.showEditForm )
 
     // click vào nút xóa thì truyền id xóa vào trong popup xóa
     $(document).on("click", ".table .contextmenu .contextmenu__deletebtn", openDeletePopup)
@@ -51,12 +56,19 @@ $(document).ready(function(){
     $(document).on("keydown", "#popupAskWarning .button-second",{event_type: "cancel"}, handleKeyDown)
     $( "#popupAskWarning .popup--askwarning" ).draggable();
     
-    
+    // handle radio button click
+    $(document).on("click", "#form .radio .form__gender", checked)
     
     // click vào thêm mới thì hiện form thêm mới nhân viên
     $(document).on("click", "#content__addbtn", handleForm.showForm)
+
     // ấn shift + A để hiện form thêm mới nhanh
     $(document).on("keydown", handleMultipleKey.shiftA)
+    
+    // ấn ctrl + K để focus vào ô tìm kiếm
+    $(document).on("keydown", handleMultipleKey.ctrlK)
+
+
     // handle form
     $( "#form .form" ).draggable();
     // click vào nút hủy hoặc dấu x thì sẽ hiện cảnh báo muốn đóng form không
@@ -83,8 +95,8 @@ $(document).ready(function(){
     // ấn ctrl + shift + S thì sẽ lưu và clear form
     $(document).on("keydown", handleMultipleKey.ctrlShiftS)
 
-
-
+    // form validate
+    $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)
     
     // esc keydown function
     // khi ấn esc thì sẽ đóng các element tương ứng

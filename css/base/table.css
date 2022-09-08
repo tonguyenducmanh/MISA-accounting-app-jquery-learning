@@ -191,7 +191,6 @@
 }
 
 .table__wrap .table tr td:not(:first-child, :last-child){
-    text-align: left;
     box-sizing: border-box;
     padding: 0px 16px;
 }

@@ -52,7 +52,7 @@ import tdCheckbox from "./tdCheckbox.js"
                 if(res != undefined){
                     for(const emp of res['Data']){
                         // tạo cột tr
-                        let trHTML = $(`<tr></tr>`);
+                        let trHTML = $(`<tr value="${emp["EmployeeId"]}"></tr>`);
                         // tạo td checkbox có từng id riêng
                         let tdCB = tdCheckbox(count)
                         trHTML.append(tdCB)
