@@ -187,7 +187,8 @@ var handleForm = {
         })
         .then((res) => {
           // nếu kết quả trả về false, tức là đã có giá trị nào đó bị trùng rồi thì hiện popup lên
-          if (res == false) {
+          // phải kiểm tra kèm xem nó có phải là thao tác thêm mới không, nếu là sửa thì trùng là cái chắc
+          if (res == false && $("#form").attr("form-type") ==  MISAEnum.form.CREATE) {
             let popupSameId = $("#popupWarning");
             $(popupSameId).addClass(MISAEnum.popup.SHOW);
             return false;
