@@ -21,7 +21,7 @@ $(document).ready(function(){
     // chọn số lượng page trên 1 trang cũng thế (3 nút có vai trò như nhau)
     $(document).on("click", ".main .content .content__reloadbtn", loadData);
     $(document).on("click", ".main .content .content__searchicon" , loadData )
-    $(document).on("click", ".combobox__data .combobox__item", loadData)
+    $(document).on("click", "#page_ranges .combobox__data .combobox__item", loadData)
     
     // thêm chức năng toggle menu edit tại mỗi records
     $(document).on("click", ".main .contextmenu__button", editToggle)
@@ -97,7 +97,7 @@ $(document).ready(function(){
 
     // form validate
     $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)
-    
+
     // esc keydown function
     // khi ấn esc thì sẽ đóng các element tương ứng
     $(document).on("keydown",{event_type: "hidecontext"}, handleKeyDown)
