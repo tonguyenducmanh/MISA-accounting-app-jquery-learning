@@ -182,10 +182,13 @@
                     <div class="content__menu">
                         <div class="content__menuleft"> Đã chọn x nhân viên</div>
                         <div class="content__menuright">
-                            <div class="input__warp content__search">
+                            <div class="input__warp content__search" 
+                                data-title="Ấn ctrl + K để nhập"
+                            >
                                 <input tabindex="0" id="input__search" type="text"
                                     class="input__field  input__field--italic" placeholder="Tìm theo mã, tên nhân viên">
-                                <span tabindex="0" class="icon input__icon content__searchicon"></span>
+                                <span tabindex="0" class="icon input__icon content__searchicon"
+                                ></span>
                             </div>
                             <div tabindex="0" class="icon content__reloadbtn" data-title="Lấy lại dữ liệu"></div>
                         </div>
@@ -275,7 +278,7 @@
                         <!-- phần nhập form thứ nhất -->
                         <div class="form__part form__one">
                             <div class="input form__ele"
-                                data-title="Mã không được để trống"    
+                                data-title="Mã không được để trống."    
                             >
                                 <div class="input__label">
                                     Mã <span class="input__label--alert">*</span>
@@ -285,7 +288,7 @@
                                 />
                             </div>
                             <div class="input form__ele"
-                                data-title="Tên không được để trống"    
+                                data-title="Tên không được để trống."    
                             >
                                 <div class="input__label">
                                     Tên <span class="input__label--alert">*</span>
@@ -298,7 +301,7 @@
                                 <div class="input__label">
                                     Đơn vị <span class="input__label--alert">*</span>
                                 </div>
-                                <mcombobox id="cbxDepartment" class="input__field input__focus input__musthave" data-title ="Đơn vị không được để trống"
+                                <mcombobox id="cbxDepartment" class="input__field input__musthave" data-title ="Đơn vị không được để trống."
                                     propName="DepartmentName"
                                     api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
                                     value="DepartmentId" placeholder="Nhập đơn vị">

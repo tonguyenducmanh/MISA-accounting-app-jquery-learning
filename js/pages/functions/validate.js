@@ -12,7 +12,7 @@ var validate ={
     mustHaveCheck(e){
         try {
             let currentELe = $(e.target)
-            if($(currentELe).val() == ""){
+            if($(currentELe).val() === ""){
                 $(currentELe).addClass("input__field--alert")
             }else{
                 $(currentELe).removeClass("input__field--alert")
