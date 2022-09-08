@@ -57,7 +57,7 @@
     width: 300px;
 }
 
-.content .content__bottom .content__menu .content__menuright .content__search .content__searchicon::before{
+.content .content__bottom .content__menu .content__menuright .content__search .content__searchicon{
     margin-top: -5px;
 }
 

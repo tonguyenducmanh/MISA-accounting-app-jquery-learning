@@ -14,6 +14,22 @@ $(document).ready(function(){
     // fetch dữ liệu từ API trả vào table
     loadData()
     
+    /**
+     * nhận biết xem đang dùng bàn phím hay chuột để thao tác, từ đó ẩn và hiện
+     * outline bên ngoài element cho phù hợp.
+     * Author: Tô Nguyễn Đức Mạnh
+     */
+     $(document).on("mousedown", $("body"), ()=>{
+        $("body").addClass("using-mouse")
+        $("body").removeClass("using-keyboard")
+    })
+      
+    $(document).on("keydown", $("body"), ()=>{
+        $("body").removeClass("using-mouse")
+        $("body").addClass("using-keyboard")
+    })
+
+
     // click group function
     // thêm chức năng tải lại dữ liệu cho nút load lại
     // click vào nút search thì tiến hành search, click vào 
