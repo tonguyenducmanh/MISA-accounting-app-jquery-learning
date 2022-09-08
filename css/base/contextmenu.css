@@ -67,3 +67,8 @@
 .contextmenu .contextmenu__item:active{
     background-color: var(--ColorPrimaryTextWhite);
 }
+
+.contextmenu .contextmenu__menu--up{
+    top:unset;
+    bottom: 22px;
+}

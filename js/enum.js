@@ -33,6 +33,7 @@ var MISAEnum = {
     // các từ khóa liên quan tới contextmenu
     contextMenu:{
         SHOW: "contextmenu__dropicon--clicked",
+        UP: "contextmenu__menu--up",
     },
     // các từ khóa liên quan tới phân trang
     pageNavigation:{
