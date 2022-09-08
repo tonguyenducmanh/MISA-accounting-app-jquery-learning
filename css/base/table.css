@@ -1,6 +1,7 @@
 .table__wrap{
     position: relative;
     flex: 1;
+    border-radius: 4px;
     box-sizing: border-box;
     overflow: auto;
 }
@@ -68,7 +69,6 @@
     right: 0;
     z-index: 3;
     height: 100%;
-    box-sizing: border-box;
 }
 
 .table__wrap .table thead tr th:last-child::before{
