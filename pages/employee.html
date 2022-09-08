@@ -284,6 +284,7 @@
                                     Mã <span class="input__label--alert">*</span>
                                 </div>
                                 <input type="text" class="input__field input__focus form__employeecode input__musthave"
+                                    id="input__checkId"
                                     propName="EmployeeCode" placeholder="Nhập mã nhân viên"
                                     validate="EmployeeCodeNotEmpty"
                                 />
@@ -439,7 +440,7 @@
                 <div class="popup popup--ask">
                     <div class="popup__content">
                         <div class="icon popup__icon"></div>
-                        <div class="popup__text">Dữ liệu đã được thay đổi, bạn có muốn cất khum</div>
+                        <div class="popup__text">Dữ liệu đã được thay đổi, bạn có muốn cất không ?</div>
                     </div>
                     <div class="popup__action">
                         <button class="button-second button--cancel" data-title="Hủy (ESC)">Hủy</button>
@@ -465,7 +466,17 @@
                 </div>
             </div>
             <!-- phần popup trùng id -->
-
+            <div class="popup__wrap" id="popupWarning">
+                <div class="popup popup--warning">
+                    <div class="popup__content">
+                        <div class="icon popup__icon"></div>
+                        <div class="popup__text"></div>
+                    </div>
+                    <div class="popup__action">
+                        <button class="button-primary">Đồng ý</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

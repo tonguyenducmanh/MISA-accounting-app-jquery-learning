@@ -1,9 +1,9 @@
 import MISAEnum from "../../enum.js"
-import deletePopupHandle from "./deletePopupHandle.js";
+import deletePopupHandle from "./popup/deletePopupHandle.js";
 import editToggle, { clickOutToggle } from "./editToggle.js";
 import handleForm from "./handleForm.js";
 import loadData from "./loadData.js"
-import openDeletePopup from "./openDeletePopup.js";
+import openDeletePopup from "./popup/openDeletePopup.js";
 
 /**
  * Tạo chức năng khi nhấn phím enter hoặc esc thì sẽ thực hiện 1 hàm nhất định.

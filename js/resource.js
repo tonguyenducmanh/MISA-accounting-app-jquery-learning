@@ -12,6 +12,14 @@ var MISAResource = {
             VI: "Đơn vị không được phép để trống.",
             EN: "Department name is not empty.",
         },
+        EmployeeCode:{
+            VI: "Mã nhân viên",
+            EN: "Employee code",
+        },
+        IsExisted:{
+            VI:"đã tồn tại trong hệ thống, vui lòng kiểm tra lại.",
+            EN: "is existed in system, please try to insert another Id.",
+        },
     },
 }
 

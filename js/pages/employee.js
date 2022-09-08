@@ -1,13 +1,15 @@
 import editToggle, { clickOutToggle } from "./functions/editToggle.js";
 import loadData from "./functions/loadData.js"
-import openDeletePopup from "./functions/openDeletePopup.js";
-import deletePopupHandle from "./functions/deletePopupHandle.js";
+import openDeletePopup from "./functions/popup/openDeletePopup.js";
+import deletePopupHandle from "./functions/popup/deletePopupHandle.js";
 import handleKeyDown from "./functions/handleKeyDown.js";
 import handleForm from "./functions/handleForm.js";
 import handleMultipleKey from "./functions/handleMultipleKeyDown.js";
 import checked from "./functions/checked.js";
 import validate from "./functions/validate.js";
-import alertPopupHandle from "./functions/alertPopupHandle.js";
+import alertPopupHandle from "./functions/popup/alertPopupHandle.js";
+import sameIdPopupHandle from "./functions/popup/sameIdpopupHandle.js";
+import MISAEnum from "../enum.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -77,9 +79,9 @@ $(document).ready(function(){
     // khi ấn esc thì cũng hiện popup như click vào hủy
     $(document).on("keydown",{event_type: "cancelForm"}, handleKeyDown)
     // ấn vào nút cất thì tiến hành lưu
-    $(document).on("click", "#form .form__save--close", handleForm.saveClose)
+    $(document).on("click", "#form .form__save--close",{event_type: MISAEnum.saveType.save}, handleForm.saveNew)
     // ấn vào nút cât và thêm thì lưu và nhập tiếp
-    $(document).on("click", "#form .form__save--readd", handleForm.saveReAdd)
+    $(document).on("click", "#form .form__save--readd",{event_type: MISAEnum.saveType.saveAndAdd}, handleForm.saveNew)
 
     
     // handle popup ask
@@ -90,9 +92,9 @@ $(document).ready(function(){
     $(document).on("click", "#popupAsk .button--no", handleForm.exitForm)
     // ấn esc thì như ấn hủy (đã viết ở cancelForm bên trên)
     // ấn ctrl + Q sẽ hủy hoàn toàn và thoát khỏi form 
-    $(document).on("keydown", handleMultipleKey.ctrlQ)
+    $(document).on("keydown","#form" , handleMultipleKey.ctrlQ)
     // ấn ctrl + S thì sẽ lưu và ẩn form
-    $(document).on("keydown", handleMultipleKey.ctrlS)
+    $(document).on("keydown","#form" , handleMultipleKey.ctrlS)
     // ấn ctrl + shift + S thì sẽ lưu và clear form
     $(document).on("keydown", handleMultipleKey.ctrlShiftS)
 
@@ -100,6 +102,12 @@ $(document).ready(function(){
     $( "#popupAlert .popup--alert" ).draggable();
     // thêm tính năng ấn vào nút đóng thì ẩn form
     $(document).on("click", "#popupAlert .popup--alert .button-primary", alertPopupHandle);
+
+    // handle wanring same Id
+    $( "#popupWarning .popup--warning" ).draggable();
+    // thêm tính năng ấn vào nút đóng thì ẩn form
+    $(document).on("click", "#popupWarning .popup--warning .button-primary", sameIdPopupHandle);
+
 
     // form validate
     $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)

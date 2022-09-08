@@ -1,5 +1,5 @@
 
-import MISAEnum from "../../enum.js"
+import MISAEnum from "../../../enum.js"
 
 /**
  * Thêm tính năng xóa bản ghi khi bấm vào nút sửa.

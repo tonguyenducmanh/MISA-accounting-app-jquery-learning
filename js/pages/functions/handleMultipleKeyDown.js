@@ -35,7 +35,7 @@ var handleMultipleKey = {
             // ngăn việc ấn ctrl S lưu web
             event.preventDefault();
             // hàm xử lý lưu vào db
-            handleForm.saveClose()
+            handleForm.saveNew(MISAEnum.saveType.save)
         }
     },
     /**
@@ -45,7 +45,7 @@ var handleMultipleKey = {
     ctrlShiftS(event){
         if(event[MISAEnum.keyname.control] && event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.s){
             // hàm clear form
-            handleForm.saveReAdd()
+            handleForm.saveNew(MISAEnum.saveType.saveAndAdd)
         }
     },
     /**
