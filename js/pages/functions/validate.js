@@ -25,6 +25,22 @@ var validate ={
         }
     },
     /**
+     * Riêng trường hợp của combobox, khi click vào 1 item thì input sẽ không có cảnh báo chưa nhập nữa.
+     * Author: Tô Nguyễn Đức Mạnh (09/09/2022)
+     */
+     removeAlertCheck(e){
+        try {
+            let currentELe = $(e.target).parents(".combobox").children(".combobox__input")
+            if($(currentELe).val() === ""){
+                $(currentELe).addClass("input__field--alert")
+            }else{
+                $(currentELe).removeClass("input__field--alert")
+            }
+        } catch (error) {
+            console.log(error)
+        }
+     },
+    /**
      * Check có điều kiện xem các ô nhập musthave có trống không ?
      * Nếu trống thì cần thêm text vào popup cảnh báo.
      * Sau đó sẽ tạo các border đỏ bao quanh các input chưa điền.
