@@ -65,8 +65,8 @@ $(document).ready(function(){
     // click vào thêm mới thì hiện form thêm mới nhân viên
     $(document).on("click", "#content__addbtn", handleForm.showForm)
 
-    // ấn shift + A để hiện form thêm mới nhanh
-    $(document).on("keydown", handleMultipleKey.shiftA)
+    // ấn ctrl + shift + A để hiện form thêm mới nhanh
+    $(document).on("keydown", handleMultipleKey.ctrlShiftA)
     
     // ấn ctrl + K để focus vào ô tìm kiếm
     $(document).on("keydown", handleMultipleKey.ctrlK)

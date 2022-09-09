@@ -16,11 +16,11 @@ var handleMultipleKey = {
         }
     },
     /**
-     * Khi ấn shift + A thì sẽ hiện form thêm mới nhanh
+     * Khi ấn ctrl+ shift + A thì sẽ hiện form thêm mới nhanh
      * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
      */
-    shiftA(event){
-        if(event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.a){
+    ctrlShiftA(event){
+        if(event[MISAEnum.keyname.control] && event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.a){
             // ngăn việc nhập linh tinh vào input
             event.preventDefault();
             handleForm.showForm()

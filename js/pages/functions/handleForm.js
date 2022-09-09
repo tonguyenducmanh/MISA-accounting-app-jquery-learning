@@ -71,33 +71,46 @@ var handleForm = {
             .then((res) => {
               // gọi các giá trị có trong form ra
               let inputs = $(
-                "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth, #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+                "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form #cbxPosition, #form .form__dateofbirth, #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
               );
               // gán giá trị trả về từ api vào form
               for (const input of inputs) {
                 const propName = $(input).attr("propName");
                 if (propName != undefined && propName != "GenderBox") {
                   let temp = res[propName];
+                  // format ngày tháng theo đúng định dạng việt nam
                   if (input.hasAttribute("format-date")) {
                     let value = common.formatDate(temp);
                     value = value.split("/").reverse().join("-");
                     temp = value;
                   }
+                  // format tiền theo đúng định dạng việt nam
                   if (input.hasAttribute("format-money")) {
                     temp = common.formatMoneyVND(temp);
                   }
-                  $(input).val(temp);
+                  // biding dữ liệu
+                  // trường hợp là input thường
+                  if(!$(input).hasClass("combobox")){
+                    $(input).val(temp)
+                  }
+                  // trường hợp là combobox
+                  else{
+                    // vì combobox có 1 giá trị là Id gửi đi và 1 giá trị và value cho người dùng xem,
+                    // ta cần binding cả 2
+                    // gán value Id vào trong combobox cha
+                    $(input).attr("value", temp)
+                    //gán input value vào trong combobox con
+                    //gọi tới sự kiện thằng con có cái id này và giả vờ click vào nó, ta sử dụng trigger
+                    $(input).children('.combobox__data').children(`.combobox__item[value=${temp}]`).trigger( "click" )
+                    // debugger
+                  }
                 }
               }
               // gọi riêng trường hợp của select
-              let genders = $("#form .radio__select input");
-              for (const gender of genders) {
-                if ($(gender).attr("value") == res["Gender"]) {
-                  $(gender).attr("checked", "check");
-                } else {
-                  $(gender).removeAttr("checked");
-                }
-              }
+              let genders = $("#form .radio__select");
+              // tương tự như trên, ta dùng trigger để click vào dòng có giới tính phù hợp
+              $(genders).children(`.radio__button[value=${res["Gender"]}]`).trigger("click")
+              debugger
             })
             .catch((res) => console.log(res));
         }
