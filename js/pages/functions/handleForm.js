@@ -149,16 +149,22 @@ var handleForm = {
   getFormInput(){
       // gọi các giá trị có trong form ra
       let inputs = $(
-        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+        "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form #cbxPosition, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
       );
       let employee = {}
       // gán các giá trị input vào employee
       for (const input of inputs) {
         const propName = $(input).attr("propName");
         if (propName != undefined) {
+          // lấy ra giá trị value trong chỗ nhập input
           let value = $(input).val();
           if (value) {
             employee[propName] = value;
+          }
+          else{
+            // trường hợp không phải là input mà là combobox chẳng hạn,
+            // ta lấy giá trị được gán vào attribute value của nó
+            employee[propName] = $(input).attr("value")
           }
         }
       }

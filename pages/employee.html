@@ -305,7 +305,7 @@
                                     Đơn vị <span class="input__label--alert">*</span>
                                 </div>
                                 <mcombobox id="cbxDepartment" class="input__field input__musthave" data-title ="Đơn vị không được để trống."
-                                    propName="DepartmentName" validate="DepartmentName"
+                                    propName="DepartmentId" validate="DepartmentName"
                                     api="https://cukcuk.manhnv.net/api/v1/Departments" text="DepartmentName"
                                     value="DepartmentId" placeholder="Nhập đơn vị">
                                 </mcombobox>
@@ -314,8 +314,14 @@
                                 <div class="input__label">
                                     Chức danh
                                 </div>
-                                <input type="text" class="input__field form__positionname" propName="PositionName"
-                                    placeholder="Nhập chức danh">
+                                <mcombobox id="cbxPosition" class="input__field"
+                                propName="PositionId" validate="DepartmentName"
+                                api="https://cukcuk.manhnv.net/api/v1/Positions" text="PositionName"
+                                value="PositionId" placeholder="Nhập chức danh">
+                                </mcombobox>
+                                <!-- phần này xài tạm combobox do api chỉ nhận position Id thay cho position name -->
+                                <!-- <input type="text" class="input__field form__positionname" propName="PositionName"
+                                    placeholder="Nhập chức danh"> -->
                             </div>
                         </div>
                         <!-- phần nhập form thứ 2 -->
