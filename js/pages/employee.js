@@ -113,6 +113,7 @@ $(document).ready(function(){
     $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)
     // trường hợp của combobox, nếu ta ấn vào 1 item thì nó phải bỏ viền cảnh báo chưa nhập đi
     $(document).on("click", ".form__body .combobox__data .combobox__item", validate.removeAlertCheck)
+    $(document).on("keydown", ".form__body .combobox__data .combobox__item",{event_type: "removeAlertCombobox"}, handleKeyDown)
 
 
     // esc keydown function

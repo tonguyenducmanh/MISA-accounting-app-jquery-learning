@@ -4,6 +4,7 @@ import editToggle, { clickOutToggle } from "./editToggle.js";
 import handleForm from "./handleForm.js";
 import loadData from "./loadData.js"
 import openDeletePopup from "./popup/openDeletePopup.js";
+import validate from "./validate.js";
 
 /**
  * Tạo chức năng khi nhấn phím enter hoặc esc thì sẽ thực hiện 1 hàm nhất định.
@@ -35,6 +36,10 @@ function handleKeyDown(e){
                 // hủy xóa
                 case "cancel":
                     deletePopupHandle.cancel(e);
+                    break;
+                // hủy cảnh báo chưa nhập combobox
+                case "removeAlertCombobox":
+                    validate.removeAlertCheck(e);
                     break;
                 default:
                     break;
