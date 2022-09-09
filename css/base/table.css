@@ -204,6 +204,11 @@
     text-align: right;
 }
 
+.table__wrap .table thead .text__align--right{
+    text-align: right;
+    padding-right: 16px;
+}
+
 .table__wrap .table .text__align--left{
     text-align: left;
     padding-left: 16px;
