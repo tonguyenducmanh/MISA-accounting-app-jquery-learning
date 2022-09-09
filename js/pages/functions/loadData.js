@@ -74,7 +74,7 @@ import tdCheckbox from "./tdCheckbox.js"
                                 value = common.formatMoneyVND(value);
                                 td = `<td  class="text__align--right">${value|| ''}</td>`
                             }
-                            if (formatGender){
+                            else if (formatGender){
                                 value = common.formatGender(value)
                                 td = `<td  class="text__align--left">${value|| ''}</td>`
                             }
