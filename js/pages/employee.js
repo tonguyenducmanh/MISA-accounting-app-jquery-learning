@@ -10,6 +10,7 @@ import validate from "./functions/validate.js";
 import alertPopupHandle from "./functions/popup/alertPopupHandle.js";
 import sameIdPopupHandle from "./functions/popup/sameIdpopupHandle.js";
 import MISAEnum from "../enum.js";
+import isNumber from "./functions/isNumber.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -114,7 +115,10 @@ $(document).ready(function(){
     // trường hợp của combobox, nếu ta ấn vào 1 item thì nó phải bỏ viền cảnh báo chưa nhập đi
     $(document).on("click", ".form__body .combobox__data .combobox__item", validate.removeAlertCheck)
     $(document).on("keydown", ".form__body .combobox__data .combobox__item",{event_type: "removeAlertCombobox"}, handleKeyDown)
-
+    // chỉ được nhập số ở các trường dùng số
+    $(document).on("keypress", ".form__body input[just-number]", function(){
+        return isNumber()
+    })
 
     // esc keydown function
     // khi ấn esc thì sẽ đóng các element tương ứng
