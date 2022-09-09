@@ -272,10 +272,16 @@ var handleForm = {
     try {
         // tiến hành xóa input value đi
         let inputs = $(
-          "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+          "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form #cbxPosition, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
         );
         for (const input of inputs) {
-          $(input).val("");
+          if(!$(input).hasClass("combobox")){
+            $(input).val("");
+          }else{
+            // trường hợp nó là combobox thì phải xử lý thêm cả những cái khác nữa
+            $(input).attr("value", "")
+            $(input).children(".combobox__input").val("")
+          }
         }
         // tiến hành đóng form
         handleForm.cancelForm();
@@ -292,10 +298,16 @@ var handleForm = {
     try {
         // tiến hành xóa input value đi
         let inputs = $(
-          "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form .form__positionname, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
+          "#form .form__employeecode,#form .form__employeename, #form #cbxDepartment, #form #cbxPosition, #form .form__dateofbirth,#form .form__gender[checked], #form .form__personaID, #form .form__createdDate, #form .form__createdwhere, #form .form__address, #form .form__phonenum,#form .form__email, #form .form__banknum,#form .form__bankname,#form .form__bankaddr "
         );
         for (const input of inputs) {
-          $(input).val("");
+          if(!$(input).hasClass("combobox")){
+            $(input).val("");
+          }else{
+            // trường hợp nó là combobox thì phải xử lý thêm cả những cái khác nữa
+            $(input).attr("value", "")
+            $(input).children(".combobox__input").val("")
+          }
         }
         //   lại thêm 1 mã code mới được tạo ra
         handleForm.getEmCode();
