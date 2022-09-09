@@ -188,6 +188,7 @@
 }
 .table__wrap .table .checkbox{
     margin-left: 16px;
+    margin-right: 16px;
 }
 
 .table__wrap .table tr td:not(:first-child, :last-child){

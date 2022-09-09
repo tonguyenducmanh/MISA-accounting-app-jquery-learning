@@ -1,13 +1,15 @@
 import editToggle, { clickOutToggle } from "./functions/editToggle.js";
 import loadData from "./functions/loadData.js"
-import openDeletePopup from "./functions/openDeletePopup.js";
-import deletePopupHandle from "./functions/deletePopupHandle.js";
+import openDeletePopup from "./functions/popup/openDeletePopup.js";
+import deletePopupHandle from "./functions/popup/deletePopupHandle.js";
 import handleKeyDown from "./functions/handleKeyDown.js";
 import handleForm from "./functions/handleForm.js";
 import handleMultipleKey from "./functions/handleMultipleKeyDown.js";
 import checked from "./functions/checked.js";
 import validate from "./functions/validate.js";
-import alertPopupHandle from "./functions/alertPopupHandle.js";
+import alertPopupHandle from "./functions/popup/alertPopupHandle.js";
+import sameIdPopupHandle from "./functions/popup/sameIdpopupHandle.js";
+import MISAEnum from "../enum.js";
 /**
  * Khởi tạo việc gán các hàm cho emoloyee.js
  * Author: Tô Nguyễn Đức Mạnh (01/09/2022)
@@ -63,8 +65,8 @@ $(document).ready(function(){
     // click vào thêm mới thì hiện form thêm mới nhân viên
     $(document).on("click", "#content__addbtn", handleForm.showForm)
 
-    // ấn shift + A để hiện form thêm mới nhanh
-    $(document).on("keydown", handleMultipleKey.shiftA)
+    // ấn ctrl + shift + A để hiện form thêm mới nhanh
+    $(document).on("keydown", handleMultipleKey.ctrlShiftA)
     
     // ấn ctrl + K để focus vào ô tìm kiếm
     $(document).on("keydown", handleMultipleKey.ctrlK)
@@ -77,9 +79,9 @@ $(document).ready(function(){
     // khi ấn esc thì cũng hiện popup như click vào hủy
     $(document).on("keydown",{event_type: "cancelForm"}, handleKeyDown)
     // ấn vào nút cất thì tiến hành lưu
-    $(document).on("click", "#form .form__save--close", handleForm.saveClose)
+    $(document).on("click", "#form .form__save--close", handleForm.clickSave)
     // ấn vào nút cât và thêm thì lưu và nhập tiếp
-    $(document).on("click", "#form .form__save--readd", handleForm.saveReAdd)
+    $(document).on("click", "#form .form__save--readd", handleForm.clickSaveAndAdd)
 
     
     // handle popup ask
@@ -90,26 +92,31 @@ $(document).ready(function(){
     $(document).on("click", "#popupAsk .button--no", handleForm.exitForm)
     // ấn esc thì như ấn hủy (đã viết ở cancelForm bên trên)
     // ấn ctrl + Q sẽ hủy hoàn toàn và thoát khỏi form 
-    $(document).on("keydown", handleMultipleKey.ctrlQ)
+    $(document).on("keydown","#form" , handleMultipleKey.ctrlQ)
     // ấn ctrl + S thì sẽ lưu và ẩn form
-    $(document).on("keydown", handleMultipleKey.ctrlS)
+    $(document).on("keydown","#form" , handleMultipleKey.ctrlS)
     // ấn ctrl + shift + S thì sẽ lưu và clear form
     $(document).on("keydown", handleMultipleKey.ctrlShiftS)
 
     // handle alert popup
     $( "#popupAlert .popup--alert" ).draggable();
     // thêm tính năng ấn vào nút đóng thì ẩn form
-    $(document).on("click", "#popupAlert .popup--alert .button-primary", alertPopupHandle);
+    $(document).on("click", "#popupAlert .popup--alert .button-primary", alertPopupHandle.hidePopup);
+
+    // handle wanring same Id
+    $( "#popupWarning .popup--warning" ).draggable();
+    // thêm tính năng ấn vào nút đóng thì ẩn form
+    $(document).on("click", "#popupWarning .popup--warning .button-primary", sameIdPopupHandle);
+
 
     // form validate
     $(document).on("blur", ".form__body .input__musthave", validate.mustHaveCheck)
+    // trường hợp của combobox, nếu ta ấn vào 1 item thì nó phải bỏ viền cảnh báo chưa nhập đi
+    $(document).on("click", ".form__body .combobox__data .combobox__item", validate.removeAlertCheck)
+
 
     // esc keydown function
     // khi ấn esc thì sẽ đóng các element tương ứng
     $(document).on("keydown",{event_type: "hidecontext"}, handleKeyDown)
     $(document).on("keydown",{event_type: "hidepopupdelete"}, handleKeyDown)
-
-
-
-
 })

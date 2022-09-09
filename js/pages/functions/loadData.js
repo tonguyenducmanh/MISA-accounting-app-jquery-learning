@@ -113,6 +113,15 @@ import tdCheckbox from "./tdCheckbox.js"
                 }
                 // ẩn loading đi
                 $(".table__wrap--loading").addClass(MISAEnum.table.HIDE)
+
+                // kiểm tra giá trị của table xem đã over flow chưa, nếu over flow rồi
+                // thì cần cho 2 records cuối cùng là context menu quay lên
+                let tableUpdate = $(".table__wrap")
+                if($(tableUpdate).get(0).scrollHeight > $(tableUpdate).get(0).clientHeight){
+                    $(".table__wrap tr:last-child .contextmenu__menu").addClass(MISAEnum.contextMenu.UP)
+                    $(".table__wrap tr:nth-last-child(2) .contextmenu__menu").addClass(MISAEnum.contextMenu.UP)
+                }
+                
             })
             .catch(res =>{
                 console.log(res)

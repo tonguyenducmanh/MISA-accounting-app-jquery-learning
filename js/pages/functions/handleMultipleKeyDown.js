@@ -16,11 +16,11 @@ var handleMultipleKey = {
         }
     },
     /**
-     * Khi ấn shift + A thì sẽ hiện form thêm mới nhanh
+     * Khi ấn ctrl+ shift + A thì sẽ hiện form thêm mới nhanh
      * Author: Tô Nguyễn Đức Mạnh (06/09/2022)
      */
-    shiftA(event){
-        if(event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.a){
+    ctrlShiftA(event){
+        if(event[MISAEnum.keyname.control] && event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.a){
             // ngăn việc nhập linh tinh vào input
             event.preventDefault();
             handleForm.showForm()
@@ -35,7 +35,7 @@ var handleMultipleKey = {
             // ngăn việc ấn ctrl S lưu web
             event.preventDefault();
             // hàm xử lý lưu vào db
-            handleForm.saveClose()
+            handleForm.saveNew(MISAEnum.saveType.save)
         }
     },
     /**
@@ -45,7 +45,7 @@ var handleMultipleKey = {
     ctrlShiftS(event){
         if(event[MISAEnum.keyname.control] && event[MISAEnum.keyname.shift] && event.code === MISAEnum.keyname.s){
             // hàm clear form
-            handleForm.saveReAdd()
+            handleForm.saveNew(MISAEnum.saveType.saveAndAdd)
         }
     },
     /**

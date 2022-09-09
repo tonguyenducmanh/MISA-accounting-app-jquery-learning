@@ -3,7 +3,7 @@
  * Author: Tô Nguyễn Đức Mạnh (05/09/2022)
  */
 
-import MISAEnum from "../../enum.js"
+import MISAEnum from "../../../enum.js"
 
 var deletePopupHandle= {
     /**
